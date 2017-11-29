@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/style.css') }}">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block menuLeft %}
+            {% include 'admin/default/menu-left.html.twig' %}
+        {% endblock %}
+
+        {% block header %}
+            {% include 'admin/default/header.html.twig' %}
+        {% endblock %}
+
+        <section class="main">
+            <span data-toggle="tooltip" data-original-title="test" data-placement="right">
+        {{ app.user }}
+    </span>
+            {% block main %}{% endblock %}
+        </section>
+
+        {% block javascripts %}{% endblock %}
+        <script type="text/javascript" src="{{ asset('js/admin/script.js') }}"></script>
+    </body>
+</html>

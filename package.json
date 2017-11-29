@@ -1,0 +1,24 @@
+{
+  "name": "lou_blog",
+  "version": "1.0.0",
+  "description": "lou_blog ========",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "browserify": "^14.5.0",
+    "jquery": "^3.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap-sass": "^3.3.7",
+    "jquery-ui": "^1.12.1",
+    "tether": "^1.4.3"
+  }
+}
