@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/admin.css') }}">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -24,6 +24,6 @@
         </section>
 
         {% block javascripts %}{% endblock %}
-        <script type="text/javascript" src="{{ asset('js/admin/script.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('build/admin.js') }}"></script>
     </body>
 </html>
