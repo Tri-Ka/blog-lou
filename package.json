@@ -20,10 +20,14 @@
     "bootstrap": "^4.0.0-alpha.6",
     "bootstrap-sass": "^3.3.7",
     "compass": "^0.1.1",
+    "datatable": "^2.0.2",
+    "datatables": "^1.10.13",
     "font-awesome": "^4.7.0",
+    "jquery-easing": "0.0.1",
     "jquery-ui": "^1.12.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
+    "startbootstrap-sb-admin": "^4.0.0-beta",
     "tether": "^1.4.3",
     "webpack-notifier": "^1.5.0"
   }
