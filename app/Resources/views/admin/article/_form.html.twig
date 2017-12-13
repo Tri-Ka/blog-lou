@@ -1,0 +1,33 @@
+{{ form_start(form, { attr: { class: 'form' } }) }}
+    <div class="card-body">
+	    {{ form_errors(form) }}
+
+		<div class="form-group">
+		    {{ form_row(form.title, {
+		        label: 'article.form.title',
+		        help: 'article.form.title.help',
+		        attr: {'class' : 'form-control'}
+		    }) }}
+	    </div>
+
+		<div class="form-group">
+		    {{ form_row(form.content, {
+		        label: 'article.form.content',
+		        help: 'article.form.content.help',
+		        attr: {'class' : 'form-control'}
+		    }) }}
+		</div>
+    </div>
+
+    <div class="card-footer text-right">
+    	<a href="{{ url('admin_article_list') }}" class="btn btn-warning">
+            <i class="fa fa-undo"></i>
+            {{ 'admin.form.cancel'|trans }}
+        </a>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check"></i>
+            {{ 'admin.form.save'|trans }}
+        </button>
+    </div>
+{{ form_end(form) }}

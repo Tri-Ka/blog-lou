@@ -1,0 +1,23 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block main %}
+	<ol class="breadcrumb">
+	    <li class="breadcrumb-item">
+	        <a href="{{ path('admin_article_list') }}">Articles</a>
+	    </li>
+
+	    <li class="breadcrumb-item active">Edition</li>
+	</ol>
+
+	<div class="card mb-3">
+        <div class="card-header">
+          	<i class="fa fa-newspaper-o"></i> {{ article.title }}
+      	</div>
+
+		{% include 'admin/article/_form.html.twig' %}
+	</div>
+{% endblock %}
+
+{% block javascriptsExternal %}
+    <script src="{{ asset('js/vendor/tinymce/tinymce.min.js') }}"></script>
+{% endblock %}

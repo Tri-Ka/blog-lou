@@ -19,4 +19,13 @@ class AdminController extends Controller
     {
         return $this->render('admin/default/index.html.twig');
     }
+
+    /**
+     * @Route("/demo", name="admin_demo")
+     * @Method({"GET"})
+     */
+    public function demoAction()
+    {
+        return $this->render('admin/demo.html.twig');
+    }
 }

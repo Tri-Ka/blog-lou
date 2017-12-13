@@ -16,9 +16,14 @@ require('datatables.net-bs4');
 
 require('startbootstrap-sb-admin/js/sb-admin.min.js');
 require('startbootstrap-sb-admin/js/sb-admin-datatables.min.js');
-require('startbootstrap-sb-admin/js/sb-admin-charts.min.js');
+
+if (0 < $('[data-chart]').length) {
+	require('startbootstrap-sb-admin/js/sb-admin-charts.min.js');
+}
 
 $(document).ready(function() {
    	$('[data-toggle="popover"]').popover();
     $('[data-toggle="tooltip"]').tooltip({container: 'body'});
+
+    tinymce.init({ selector:'[data-tinymce]' });
 });
