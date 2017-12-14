@@ -15,4 +15,12 @@ class FrontController extends Controller
     {
         return $this->render('front/default/index.html.twig');
     }
+
+    /**
+     * @Route("/demo", name="demo")
+     */
+    public function demoAction(Request $request)
+    {
+        return $this->render('front/default/demo.html.twig');
+    }
 }
