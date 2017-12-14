@@ -2,21 +2,47 @@
     <div class="card-body">
 	    {{ form_errors(form) }}
 
-		<div class="form-group">
-		    {{ form_row(form.title, {
-		        label: 'article.form.title',
-		        help: 'article.form.title.help',
-		        attr: {'class' : 'form-control'}
-		    }) }}
-	    </div>
+	    <div class="row">
+	    	<div class="col-md-6">
+	    		<div class="form-group">
+				    {{ form_row(form.imageFile, {
+				        label: 'article.form.imageFile',
+				        help: 'article.form.imageFile.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+	    	</div>
 
-		<div class="form-group">
-		    {{ form_row(form.content, {
-		        label: 'article.form.content',
-		        help: 'article.form.content.help',
-		        attr: {'class' : 'form-control'}
-		    }) }}
-		</div>
+	    	<div class="col-md-6">
+				<img class="img-thumbnail" src="{{ vich_uploader_asset(article, 'imageFile') }}">
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+				    {{ form_row(form.title, {
+				        label: 'article.form.title',
+				        help: 'article.form.title.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+
+	    		<div class="form-group">
+				    {{ form_row(form.content, {
+				        label: 'article.form.content',
+				        help: 'article.form.content.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+				</div>
+
+	    		<div class="form-group">
+				    {{ form_row(form.htags, {
+				        label: 'article.form.htags',
+				        help: 'article.form.htags.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+				</div>
+	    	</div>
+	    </div>
     </div>
 
     <div class="card-footer text-right">
