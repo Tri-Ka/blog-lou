@@ -199,4 +199,23 @@ class Article
     {
         return $this->htags;
     }
+
+    /**
+     * Get htags.
+     *
+     * @return string
+     */
+    public function getHtagsArray()
+    {
+        $tags = [];
+        $articleTags = explode('#', $this->htags);
+
+        foreach ($articleTags as $articleTag) {
+            if ('' !== $articleTag) {
+                $tags[$articleTag] = '#'.$articleTag;
+            }
+        }
+
+        return $tags;
+    }
 }

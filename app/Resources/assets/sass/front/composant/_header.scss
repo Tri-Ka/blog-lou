@@ -1,0 +1,26 @@
+.header {
+	height: 400px;
+	line-height: 450px;
+	background-color: #efefef;
+	background-image: url('img/header.jpg');
+	color: #fff;
+
+	.header__title {
+	    display: inline-block;
+    	margin: auto;
+    	width: 100%;
+
+    	h1 {
+    		font-weight: bold;
+    	    margin-bottom: 15px;
+    		font-size: 3em;
+    		color: #fff;
+    	}
+
+    	h3 {
+    		font-weight: 100;
+    		font-size: 1em;
+    		color: #fff;
+    	}
+	}
+}

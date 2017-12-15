@@ -1,0 +1,96 @@
+* {
+	font-family: 'Montserrat', sans-serif;
+}
+
+ul, li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+a {
+	color: #3f3f3f;
+	transition: all .3s;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	color: $color-main;
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Montserrat";
+    color: #3f3f3f;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+body a h1, body a h2, body a h3, body a h4, body a h5, body a h6 {
+	&:hover,
+	&:focus {
+		color: $color-main;
+	}
+}
+
+.widget-title {
+	font-size: 20px;
+}
+
+.input-group {
+	input.form-control {
+	    padding: 15px;
+    	border-radius: 0;
+    	border-color: transparent;
+	}
+
+	.input-group-btn {
+		.btn {
+			border-radius: 0;
+			background: #efefef;
+			border-color: transparent;
+
+			&:hover,
+			&:focus {
+				background: $color-main;
+				color: #fff;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+header {
+	.navbar {
+		position: absolute;
+		background: none;
+		font-weight: bold;
+	}
+
+	.navbar-light .navbar-brand,
+	.navbar-light .navbar-toggler {
+		color: #fff;
+	}
+
+	.navbar-light .navbar-nav .open > .nav-link,
+	.navbar-light .navbar-nav .active > .nav-link,
+	.navbar-light .navbar-nav .nav-link.open,
+	.navbar-light .navbar-nav .nav-link.active {
+		color: #fff;
+	}
+
+	.navbar-light .navbar-nav .nav-link {
+		color: rgba(255, 255, 255, 0.85);
+
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+	}
+}
+
+footer {
+    background-color: #262626;
+    color: #e3e3e3;
+	padding: 100px 0 100px 0;
+}

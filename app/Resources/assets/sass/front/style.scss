@@ -1,3 +1,11 @@
 @import "../vendors/bootstrap/bootstrap.min.scss";
 @import '~font-awesome/scss/font-awesome';
-/*@import "composant/theme";*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900');
+
+$color-main: #47c9e5;
+$color-gray: #e6e6e6;
+
+@import "composant/layout";
+@import "composant/header";
+@import "composant/home";

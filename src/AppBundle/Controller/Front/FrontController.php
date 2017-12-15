@@ -13,8 +13,25 @@ class FrontController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $tags = [];
+        $articles =  $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
+
+        foreach ($articles as $article) {
+            $articleTags = explode('#', $article->getHtags());
+
+            foreach ($articleTags as $articleTag) {
+                $articleTag = trim($articleTag);
+                if ('' !== $articleTag) {
+                    $tags[$articleTag] = '#'.$articleTag;
+                }
+            }
+        }
+
         return $this->render('front/default/index.html.twig', [
-            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll()
+            'lastArticles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll(),
+            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll(),
+            'tags' => $tags,
+            'popularTags' => $tags
         ]);
     }
 
