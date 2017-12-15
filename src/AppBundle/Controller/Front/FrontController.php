@@ -9,9 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 class FrontController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{page}", name="homepage", defaults={"page" = 1})
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, $page)
     {
         $tags = [];
         $articles =  $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
@@ -28,8 +28,7 @@ class FrontController extends Controller
         }
 
         return $this->render('front/default/index.html.twig', [
-            'lastArticles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll(),
-            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll(),
+            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->getList($page),
             'tags' => $tags,
         ]);
     }
