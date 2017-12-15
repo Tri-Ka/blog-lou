@@ -32,4 +32,14 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
 
         return $paginator;
     }
+
+    public function findByTag($tag)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.htags LIKE :tag')
+            ->orderBy('a.createdAt', 'DESC')
+            ->setParameter('tag', '%'.$tag.'%')
+            ->getQuery()
+            ->getResult();
+    }
 }

@@ -31,7 +31,6 @@ class FrontController extends Controller
             'lastArticles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll(),
             'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll(),
             'tags' => $tags,
-            'popularTags' => $tags
         ]);
     }
 

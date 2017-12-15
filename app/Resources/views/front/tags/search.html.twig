@@ -1,0 +1,38 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block body %}
+
+	<div class="container container--main">
+		<div class="row">
+			<div class="col-sm-9 col-xs-12">
+				<div class="row grid articles-list">
+					{% for article in articles %}
+			        	<div class="col-xs-12 col-sm-6 grid-item mb-4 mt-1">
+			        		{% include 'front/article/thumb.html.twig' %}
+			        	</div>
+		        	{% endfor %}
+		        </div>
+			</div>
+
+			<div class="col-sm-3 col-xs-12">
+				{{ render(controller('AppBundle:Front/Article:recentArticles', { 'max': 4 })) }}
+
+				<div class="widget-item widget_search">
+		            <form method="get" class="search-form" action="#">
+		                <div class="input-group">
+					      <input type="text" class="form-control" placeholder="Rechercher ...">
+					      <span class="input-group-btn">
+					        <button class="btn btn-secondary" type="button">
+					        	<i class="fa fa-search"></i>
+					        </button>
+					      </span>
+					    </div>
+		            </form>
+		        </div>
+
+				{{ render(controller('AppBundle:Front/Tags:popular')) }}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

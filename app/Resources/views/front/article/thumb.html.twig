@@ -1,0 +1,37 @@
+<div class="card">
+	{% if article.image %}
+	   <div class="card-img-top" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})" data-holder-rendered="true"></div>
+    {% endif %}
+
+    <div class="card-block">
+    	<div class="card-date">
+    		{{ article.createdAt|date("d/m/Y") }}
+    	</div>
+
+    	<a href="{{ path('article_show', { 'id' : article.id }) }}" class="card-link">
+    		<h4 class="card-title">{{ article.title }}</h4>
+    	</a>
+
+    	<p class="card-text">
+    		{{ article.content|striptags('<br>')|truncate(200) }}
+    	</p>
+
+    	{% if article.htags %}
+    		<div class="card-tags">
+    			<ul>
+    				{% for tag in article.htagsArray %}
+    					<li>
+    						<a href="{{ path('tag_search', { 'tag' : tag }) }}" class="">
+    							{{ tag }}
+    						</a>
+    					</li>
+    				{% endfor %}
+    			</ul>
+    		</div>
+    	{% endif %}
+
+    	<a href="{{ path('article_show', { 'id' : article.id }) }}" class="card-comments">
+			<i class="fa fa-comment-o"></i>0
+        </a>
+    </div>
+</div>

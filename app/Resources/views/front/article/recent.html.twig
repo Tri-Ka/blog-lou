@@ -1,0 +1,27 @@
+<div class="last-articles">
+    <h3>Derniers posts</h3>
+
+    <ul>
+        {% for article in articles %}
+            <li>
+                <div class="last-article">
+                    <a href="{{ path('article_show', { 'id' : article.id }) }}" class="last-article__img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})"></a>
+
+                    <div class="last-article__content">
+                        <span class="last-article__content__tags">
+                            {% for tag in article.htagsArray %}
+                                <a href="#" class="">
+                                    {{ tag }}
+                                </a>
+                            {% endfor %}
+                        </span>
+
+                        <a href="{{ path('article_show', { 'id' : article.id }) }}">
+                            <h6>{{ article.title }}</h6>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
