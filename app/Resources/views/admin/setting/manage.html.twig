@@ -1,0 +1,57 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block main %}
+	<ol class="breadcrumb">
+	    <li class="breadcrumb-item">
+	        <a href="#">Settings</a>
+	    </li>
+
+	    <li class="breadcrumb-item active">Configuration</li>
+	</ol>
+
+	<div class="card mb-3">
+        <div class="card-header">
+          	<i class="fa fa-newspaper-o"></i> {{ 'Configuration' }}
+      	</div>
+
+		{{ form_start(settings_form, { attr: { id: 'settings-form', class: 'form' } }) }}
+			<div class="card-body">
+				<div class="form-group">
+					{{ form_row(settings_form.application_name, {
+				        label: 'settings.form.application_name',
+				        help: 'settings.form.application_name.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+
+			    <div class="form-group">
+					{{ form_row(settings_form.application_subname, {
+				        label: 'settings.form.application_subname',
+				        help: 'settings.form.application_subname.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+
+			    <div class="form-group">
+					{{ form_row(settings_form.application_contact_email, {
+				        label: 'settings.form.application_contact_email',
+				        help: 'settings.form.application_contact_email.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+			</div>
+
+			<div class="card-footer text-right">
+		    	<a href="{{ url('admin_article_list') }}" class="btn btn-warning">
+		            <i class="fa fa-undo"></i>
+		            {{ 'admin.form.cancel'|trans }}
+		        </a>
+
+		        <button type="submit" class="btn btn-primary">
+		            <i class="fa fa-check"></i>
+		            {{ 'admin.form.save'|trans }}
+		        </button>
+		    </div>
+	    {{ form_end(settings_form) }}
+    </div>
+{% endblock %}

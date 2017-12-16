@@ -1,0 +1,23 @@
+<div class="widget">
+    <div class="widget-header transparent">
+        <h2>
+            {% block title %}
+
+            {% endblock %}
+        </h2>
+    </div>
+
+    <div class="widget-content padding">
+        {% block content %}
+
+        {% endblock %}
+        <div class="data-table-toolbar row btns">
+            <div class="pull-right">
+                <button type="submit" class="btn btn-xs btn-primary">
+                    <i class="fa fa-check"></i>
+                    {{ 'admin.form.save'|trans }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+dmishh_settings:
+    template:   admin/setting/manage.html.twig
+    serialization: json # database serialization mechanism (php|json)
+    settings:
+        application_name:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false
+        application_subname:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false
+        application_contact_email:
+            type: Symfony\Component\Form\Extension\Core\Type\EmailType
+            options:
+                required: false
