@@ -11,12 +11,12 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-6">
-			<div class="card mb-3">
-		        <div class="card-header">
-		          	<i class="fa fa-gears"></i> {{ 'Configuration générale' }}
-		      	</div>
+			{{ form_start(settings_form, { attr: { class: 'form' } }) }}
+				<div class="card mb-3">
+			        <div class="card-header">
+			          	<i class="fa fa-gears"></i> {{ 'Configuration générale' }}
+			      	</div>
 
-				{{ form_start(settings_form, { attr: { id: 'settings-form', class: 'form' } }) }}
 					<div class="card-body">
 						<div class="form-group">
 							{{ form_row(settings_form.application_name, {
@@ -41,6 +41,22 @@
 						        attr: {'class' : 'form-control'}
 						    }) }}
 					    </div>
+
+					    <div class="form-group">
+							{{ form_row(settings_form.footer_text, {
+						        label: 'settings.form.footer_text'|trans,
+						        help: 'settings.form.footer_text.help',
+						        attr: {'class' : 'form-control'}
+						    }) }}
+					    </div>
+
+					    <div class="form-group">
+							{{ form_row(settings_form.site_url, {
+						        label: 'settings.form.site_url'|trans,
+						        help: 'settings.form.site_url.help',
+						        attr: {'class' : 'form-control'}
+						    }) }}
+					    </div>
 					</div>
 
 					<div class="card-footer text-right">
@@ -54,8 +70,52 @@
 				            {{ 'admin.form.save'|trans }}
 				        </button>
 				    </div>
-			    {{ form_end(settings_form) }}
-		    </div>
+			    </div>
+
+			    <div class="card mb-3">
+			        <div class="card-header">
+			          	<i class="fa fa-share-alt"></i> {{ 'Social' }}
+			      	</div>
+
+					<div class="card-body">
+						<div class="form-group">
+							{{ form_row(settings_form.facebook_url, {
+						        label: 'settings.form.facebook_url'|trans,
+						        help: 'settings.form.facebook_url.help'|trans,
+						        attr: {'class' : 'form-control'}
+						    }) }}
+					    </div>
+
+					    <div class="form-group">
+							{{ form_row(settings_form.twitter_url, {
+						        label: 'settings.form.twitter_url'|trans,
+						        help: 'settings.form.twitter_url.help'|trans,
+						        attr: {'class' : 'form-control'}
+						    }) }}
+					    </div>
+
+					    <div class="form-group">
+							{{ form_row(settings_form.google_url, {
+						        label: 'settings.form.google_url'|trans,
+						        help: 'settings.form.google_url.help'|trans,
+						        attr: {'class' : 'form-control'}
+						    }) }}
+					    </div>
+					</div>
+
+					<div class="card-footer text-right">
+				    	<a href="{{ url('admin_article_list') }}" class="btn btn-sm btn-default">
+				            <i class="fa fa-undo"></i>
+				            {{ 'admin.form.cancel'|trans }}
+				        </a>
+
+				        <button type="submit" class="btn btn-sm btn-primary">
+				            <i class="fa fa-check"></i>
+				            {{ 'admin.form.save'|trans }}
+				        </button>
+				    </div>
+			    </div>
+			{{ form_end(settings_form) }}
 		</div>
 
 		<div class="col-xs-12 col-sm-6">

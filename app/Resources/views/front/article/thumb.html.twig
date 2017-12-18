@@ -14,9 +14,11 @@
     		<h4 class="card-title">{{ article.title }}</h4>
     	</a>
 
-    	<p class="card-text">
-    		{{ article.content|striptags('<br>')|truncate(200) }}
-    	</p>
+    	<div class="card-text">
+            {% autoescape %}
+                {{ article.content|striptags|truncate(200)|raw|nl2br }}
+            {% endautoescape %}
+    	</div>
 
     	{% if article.htags %}
     		<div class="card-tags">

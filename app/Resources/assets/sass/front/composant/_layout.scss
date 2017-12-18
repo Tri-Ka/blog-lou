@@ -114,9 +114,51 @@ header.home-header {
 }
 
 footer {
-    background-color: #262626;
-    color: #e3e3e3;
-	padding: 100px 0 100px 0;
+	.footer-top {
+	    background-color: #262626;
+	    color: #e3e3e3;
+		padding: 100px 0 50px 0;
+
+		ul.social-footer-list li {
+			display: inline-block;
+			margin-right: 10px;
+
+			a {
+				color: #656565;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				display: block;
+				border-radius: 100%;
+				font-size: 23px;
+				background: #333;
+
+				&.fb:hover,
+				&.fb:focus {
+					color: #3b5999;
+				}
+
+				&.tw:hover,
+				&.tw:focus {
+					color: #55acee;
+				}
+
+				&.ggl:hover,
+				&.ggl:focus {
+					color: #dd4b39;
+				}
+			}
+		}
+	}
+
+	.footer-bottom {
+		background: #191919;
+		padding: 3em;
+		text-align: center;
+		color: #a0a0a0;
+		font-size: 11px;
+	}
 }
 
 .search-title {

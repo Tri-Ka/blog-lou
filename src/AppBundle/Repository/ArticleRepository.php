@@ -13,9 +13,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
-    const NB_PER_PAGE = 5;
+    const NB_PER_PAGE = 10;
 
-    public function getList($page, $nbMax = self::NB_PER_PAGE)
+    public function getList($page = 1, $nbMax = self::NB_PER_PAGE)
     {
         $qb = $this->createQueryBuilder('a')
             ->orderBy('a.createdAt', 'DESC');
@@ -39,6 +39,16 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
             ->andWhere('a.htags LIKE :tag')
             ->orderBy('a.createdAt', 'DESC')
             ->setParameter('tag', '%'.$tag.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findByContent($content)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.content LIKE :content OR a.title LIKE :content')
+            ->orderBy('a.createdAt', 'DESC')
+            ->setParameter('content', '%'.$content.'%')
             ->getQuery()
             ->getResult();
     }

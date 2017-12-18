@@ -14,3 +14,23 @@ dmishh_settings:
             type: Symfony\Component\Form\Extension\Core\Type\EmailType
             options:
                 required: false
+        facebook_url:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false
+        twitter_url:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false
+        google_url:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false
+        footer_text:
+            type: Symfony\Component\Form\Extension\Core\Type\TextareaType
+            options:
+                required: false
+        site_url:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false

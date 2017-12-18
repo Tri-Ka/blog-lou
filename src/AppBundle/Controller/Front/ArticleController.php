@@ -12,7 +12,7 @@ class ArticleController extends Controller
     public function recentArticlesAction($max = 4)
     {
         return $this->render('front/article/recent.html.twig', [
-            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findAll()
+            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->getList(1, 5)
         ]);
     }
 

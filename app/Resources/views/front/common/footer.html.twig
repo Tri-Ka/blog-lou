@@ -1,0 +1,51 @@
+<footer>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>
+                        {{ get_setting('footer_text')|nl2br }}
+                    </p>
+
+                    <ul class="social-footer-list">
+                        {% if (null != get_setting('facebook_url')) %}
+                            <li>
+                                <a href="{{ get_setting('facebook_url') }}" class="fb">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% if (null != get_setting('twitter_url')) %}
+                            <li>
+                                <a href="{{ get_setting('twitter_url') }}" class="tw">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% if (null != get_setting('google_url')) %}
+                            <li>
+                                <a href="{{ get_setting('google_url') }}" class="ggl">
+                                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    {{ render(controller('AppBundle:Front/Article:recentArticles', { 'max': 4 })) }}
+                </div>
+
+                <div class="col-md-4">
+                    {{ render(controller('AppBundle:Front/Tags:popular')) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © {{ get_setting('site_url') }} 2017 - Tous droits réservés
+    </div>
+</footer>

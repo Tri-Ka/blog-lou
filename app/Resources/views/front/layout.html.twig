@@ -14,25 +14,7 @@
 
         {% block body %}{% endblock %}
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <p>
-                            Pellentesque placerat tincidunt urna, vitae feugiat magna vestibulum non. Mauris ut sagittis est. Pellentesque a felis est. Duis in risus metus. Cras felis ante, sodales eget pretium eu, hendrerit at metus. Maecenas aliquam dictum sapien id ornare.
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        {{ render(controller('AppBundle:Front/Article:recentArticles', { 'max': 4 })) }}
-                    </div>
-
-                    <div class="col-md-4">
-                        {{ render(controller('AppBundle:Front/Tags:popular')) }}
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include 'front/common/footer.html.twig' %}
 
         <div id="fb-root"></div>
         <script>(function(d, s, id) {

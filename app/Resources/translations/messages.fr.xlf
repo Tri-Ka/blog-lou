@@ -49,6 +49,46 @@
         <source>article.form.htags.help</source>
         <target>__article.form.htags.help</target>
       </trans-unit>
+      <trans-unit id="4f617dea8a7c76f823d13533f0308804" resname="settings.form.facebook_url">
+        <source>settings.form.facebook_url</source>
+        <target>Facebook url</target>
+      </trans-unit>
+      <trans-unit id="89c671c8b0a38fcc328e77c44a3a6376" resname="settings.form.facebook_url.help">
+        <source>settings.form.facebook_url.help</source>
+        <target>__settings.form.facebook_url.help</target>
+      </trans-unit>
+      <trans-unit id="3ab80b0fc0a16203acab64507ba0ab33" resname="settings.form.twitter_url">
+        <source>settings.form.twitter_url</source>
+        <target>Twitter url</target>
+      </trans-unit>
+      <trans-unit id="b410b8480ae3f69eb083c64998860b3c" resname="settings.form.twitter_url.help">
+        <source>settings.form.twitter_url.help</source>
+        <target>__settings.form.twitter_url.help</target>
+      </trans-unit>
+      <trans-unit id="7f977ad330eb10a2d35174b09a518c76" resname="settings.form.google_url">
+        <source>settings.form.google_url</source>
+        <target>Google url</target>
+      </trans-unit>
+      <trans-unit id="3560ea881d6853664339b17163e218b3" resname="settings.form.google_url.help">
+        <source>settings.form.google_url.help</source>
+        <target>__settings.form.google_url.help</target>
+      </trans-unit>
+      <trans-unit id="1c88ac9666b37b8d45de5c3a2e3824ef" resname="settings.form.footer_text">
+        <source>settings.form.footer_text</source>
+        <target>Texte du footer</target>
+      </trans-unit>
+      <trans-unit id="5022dd918d02d1245972f3fd0b49d238" resname="settings.form.footer_text.help">
+        <source>settings.form.footer_text.help</source>
+        <target>__settings.form.footer_text.help</target>
+      </trans-unit>
+      <trans-unit id="97ae3c1d53099876b4b6676323e7842c" resname="settings.form.site_url">
+        <source>settings.form.site_url</source>
+        <target>Site URL</target>
+      </trans-unit>
+      <trans-unit id="f202dfb441499af16a1041985d832931" resname="settings.form.site_url.help">
+        <source>settings.form.site_url.help</source>
+        <target>__settings.form.site_url.help</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

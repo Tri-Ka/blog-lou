@@ -41,7 +41,7 @@ a.btn-round {
 			color: #3f3f3f;
 
 			&:hover {
-				box-shadow: 0 1px 1px 1px rgba(0,0,0,0.06)
+				box-shadow: 0 1px 1px 1px rgba(0,0,0,0.06);
 			}
 
 			.card-img-top {
@@ -49,8 +49,13 @@ a.btn-round {
 				height: 180px;
 			    width: 100%;
 			    display: block;
-			    background-size: cover;
+			    background-size: 100%;
 			    background-position: center;
+			    transition: all .3s;
+
+			    &:hover {
+					background-size: 105%;
+			    }
 			}
 
 			.card-block {
@@ -70,7 +75,7 @@ a.btn-round {
 
 				.card-text {
 					font-size: 13px;
-					padding-bottom: 15px;
+					padding-bottom: 30px;
 				}
 
 				.card-tags {
