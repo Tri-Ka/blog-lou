@@ -17,6 +17,15 @@ require('datatables.net-bs4');
 require('startbootstrap-sb-admin/js/sb-admin.min.js');
 require('startbootstrap-sb-admin/js/sb-admin-datatables.min.js');
 
+import fontawesome from '@fortawesome/fontawesome'
+import { faUser } from '@fortawesome/fontawesome-free-solid'
+import { faCircle } from '@fortawesome/fontawesome-free-regular'
+import { faFacebook } from '@fortawesome/fontawesome-free-brands'
+
+fontawesome.icon(faUser)
+fontawesome.icon(faCircle)
+fontawesome.icon(faFacebook)
+
 if (0 < $('[data-chart]').length) {
 	require('startbootstrap-sb-admin/js/sb-admin-charts.min.js');
 }

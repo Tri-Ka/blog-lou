@@ -5,6 +5,7 @@ namespace AppBundle\Controller\Front;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Repository\ArticleRepository;
 
 class FrontController extends Controller
 {
@@ -27,9 +28,19 @@ class FrontController extends Controller
             }
         }
 
+        $articles = $this->getDoctrine()->getRepository('AppBundle:Article')->getList($page);
+
+        $pagination = array(
+            'page' => $page,
+            'nbPages' => ceil(count($articles) / ArticleRepository::NB_PER_PAGE),
+            'nomRoute' => 'homepage',
+            'paramsRoute' => array()
+        );
+
         return $this->render('front/default/index.html.twig', [
-            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->getList($page),
+            'articles' => $articles,
             'tags' => $tags,
+            'pagination' => $pagination
         ]);
     }
 

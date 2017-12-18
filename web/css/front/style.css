@@ -9,7 +9,10 @@ Error: File to import not found or unreadable: ~font-awesome/scss/font-awesome.
 1: @import "../vendors/bootstrap/bootstrap.min.scss";
 2: @import '~font-awesome/scss/font-awesome';
 3: 
-4: @import "composant/header";
+4: @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900');
+5: 
+6: $color-main: #47c9e5;
+7: $color-gray: #e6e6e6;
 
 Backtrace:
 /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/front/style.scss:2
@@ -59,4 +62,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~font-awesome/scss/font-awesome.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass\A          /Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets\A         on line 2 of /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/front/style.scss\A \A 1: @import \"../vendors/bootstrap/bootstrap.min.scss\";\A 2: @import '~font-awesome/scss/font-awesome';\A 3: \A 4: @import \"composant/header\";"; }
+  content: "Error: File to import not found or unreadable: ~font-awesome/scss/font-awesome.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass\A          /Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets\A         on line 2 of /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/front/style.scss\A \A 1: @import \"../vendors/bootstrap/bootstrap.min.scss\";\A 2: @import '~font-awesome/scss/font-awesome';\A 3: \A 4: @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900');\A 5: \A 6: $color-main: #47c9e5;\A 7: $color-gray: #e6e6e6;"; }

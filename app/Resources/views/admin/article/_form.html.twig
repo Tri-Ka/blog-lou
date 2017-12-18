@@ -5,16 +5,18 @@
 	    <div class="row">
 	    	<div class="col-md-6">
 	    		<div class="form-group">
+	    			<img class="img-thumbnail" src="{{ vich_uploader_asset(article, 'imageFile') }}">
+	    		</div>
+	    	</div>
+
+	    	<div class="col-md-6">
+				<div class="form-group">
 				    {{ form_row(form.imageFile, {
 				        label: 'article.form.imageFile',
 				        help: 'article.form.imageFile.help',
 				        attr: {'class' : 'form-control'}
 				    }) }}
 			    </div>
-	    	</div>
-
-	    	<div class="col-md-6">
-				<img class="img-thumbnail" src="{{ vich_uploader_asset(article, 'imageFile') }}">
 			</div>
 
 			<div class="col-md-12">
@@ -46,7 +48,7 @@
     </div>
 
     <div class="card-footer text-right">
-    	<a href="{{ url('admin_article_list') }}" class="btn btn-warning">
+    	<a href="{{ url('admin_article_list') }}" class="btn btn-default">
             <i class="fa fa-undo"></i>
             {{ 'admin.form.cancel'|trans }}
         </a>

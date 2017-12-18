@@ -12,12 +12,14 @@ $(document).ready(function() {
    	$('[data-toggle="popover"]').popover();
     $('[data-toggle="tooltip"]').tooltip({container: 'body'});
 
-    var $masonryContainer = $('.grid');
+    if ($('.grid').length > 0) {
+    	var $masonryContainer = $('.grid');
 
-	$masonryContainer.imagesLoaded( function(){
-		new Masonry( '.grid', {
-		  itemSelector: '.grid-item',
-		  columnWidth: '.grid-item',
+		$masonryContainer.imagesLoaded( function(){
+			new Masonry( '.grid', {
+			  itemSelector: '.grid-item',
+			  columnWidth: '.grid-item',
+			});
 		});
-	});
+    }
 });

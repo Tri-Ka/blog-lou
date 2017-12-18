@@ -25,8 +25,7 @@ class ArticleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => 'AppBundle\Entity\Article',
-            'translation_domain' => 'admin',
+            'data_class' => 'AppBundle\Entity\Article'
         ]);
     }
 }

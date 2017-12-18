@@ -1,0 +1,20 @@
+parameters:
+
+services:
+    app.logo_extension:
+        class: AppBundle\Twig\LogoExtension
+        arguments:
+            - "@app.logo.service"
+            - "@request_stack"
+        public: false
+        tags:
+            - { name: twig.extension }
+
+    app.cover_extension:
+        class: AppBundle\Twig\CoverExtension
+        arguments:
+            - "@app.cover.service"
+            - "@request_stack"
+        public: false
+        tags:
+            - { name: twig.extension }

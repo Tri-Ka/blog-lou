@@ -1,9 +1,10 @@
 .header {
-	height: 400px;
-	line-height: 450px;
-	background-color: #efefef;
-	background-image: url('img/header.jpg');
+	height: 460px;
+	line-height: 500px;
+	background-color: #ffc107;
 	color: #fff;
+    background-size: cover;
+    background-position: center;
 
 	.header__title {
 	    display: inline-block;

@@ -5,6 +5,34 @@
 @import "composant/menu-left";
 @import "composant/header";
 
+html {
+	font-size: 14px;
+}
+
 img {
 	max-width: 100%;
+}
+
+a {
+	color: #343a40;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: lighten(#343a40, 10%);
+	}
+}
+
+.btn-default {
+	background: #fff;
+	color: #333;
+}
+
+.btn-primary {
+	background: #2196F3;
+	border-color: #2196F3;
+
+	&:hover {
+		cursor: pointer;
+	}
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{{ get_setting('application_name') }}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/front.css') }}">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <header class="home-header">
+            {% include 'front/common/navbar.html.twig' %}
+        </header>
+
+        {% block body %}{% endblock %}
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>
+                            Pellentesque placerat tincidunt urna, vitae feugiat magna vestibulum non. Mauris ut sagittis est. Pellentesque a felis est. Duis in risus metus. Cras felis ante, sodales eget pretium eu, hendrerit at metus. Maecenas aliquam dictum sapien id ornare.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        {{ render(controller('AppBundle:Front/Article:recentArticles', { 'max': 4 })) }}
+                    </div>
+
+                    <div class="col-md-4">
+                        {{ render(controller('AppBundle:Front/Tags:popular')) }}
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11&appId=265315956922705';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        {% block javascriptsExternal %}{% endblock %}
+        <script type="text/javascript" src="{{ asset('build/front.js') }}"></script>
+    </body>
+</html>

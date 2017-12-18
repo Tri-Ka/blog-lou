@@ -1,0 +1,20 @@
+{{ form_start(form, { attr: { id: 'cover-form', class: 'form', action: url('cover') } }) }}
+
+<div class="card-body">
+    <img src="{{ renderSiteCover() }}" width="100%;" class="mb-3">
+
+    {{ form_widget(form) }}
+</div>
+
+<div class="card-footer text-right">
+    <a href="{{ url('cover_delete') }}" class="btn btn-sm btn-danger">
+        <i class="fa fa-trash"></i>
+        {{ 'admin.logo.delete'|trans }}
+    </a>
+
+    <button type="submit" class="btn btn-sm btn-primary">
+        <i class="fa fa-check"></i>
+        {{ 'admin.form.save'|trans }}
+    </button>
+</div>
+{{ form_end(form) }}

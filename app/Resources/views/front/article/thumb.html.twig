@@ -1,6 +1,8 @@
 <div class="card">
 	{% if article.image %}
-	   <div class="card-img-top" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})" data-holder-rendered="true"></div>
+        <a href="{{ path('article_show', { 'id' : article.id }) }}">
+            <div class="card-img-top" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})" data-holder-rendered="true"></div>
+        </a>
     {% endif %}
 
     <div class="card-block">
@@ -31,7 +33,7 @@
     	{% endif %}
 
     	<a href="{{ path('article_show', { 'id' : article.id }) }}" class="card-comments">
-			<i class="fa fa-comment-o"></i>0
+			<i class="fa fa-comment-o"></i> <fb:comments-count href="{{ absolute_url(path('article_show', { 'id' : article.id })) }}"></fb:comments-count>
         </a>
     </div>
 </div>

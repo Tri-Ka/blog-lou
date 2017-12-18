@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="15355e89f75f8f5cddedf27de162ac80" resname="admin.form.cancel">
+        <source>admin.form.cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="c775164ce0d6a59c21b0b39543bea7f4" resname="admin.form.save">
+        <source>admin.form.save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="b9300e0c1d78075dc4b3ddcb6bbc370f" resname="admin.logo.delete">
+        <source>admin.logo.delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="0738b4db2cb26169832cc5d976e4d9dd" resname="article.form.imageFile">
+        <source>article.form.imageFile</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="36bdb95fc46a778cd3a8644a414add1d" resname="article.form.imageFile.help">
+        <source>article.form.imageFile.help</source>
+        <target>__article.form.imageFile.help</target>
+      </trans-unit>
+      <trans-unit id="b778925da837e2fedbb6e3ad5e18bab2" resname="article.form.title">
+        <source>article.form.title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="bed131907682ea72992ca66f538a275c" resname="article.form.title.help">
+        <source>article.form.title.help</source>
+        <target>__article.form.title.help</target>
+      </trans-unit>
+      <trans-unit id="8aec335192a39a4ac2d78313d12592fc" resname="article.form.content">
+        <source>article.form.content</source>
+        <target>Contenu</target>
+      </trans-unit>
+      <trans-unit id="91816634d5b03b9d6b21dafc99a246f5" resname="article.form.content.help">
+        <source>article.form.content.help</source>
+        <target>__article.form.content.help</target>
+      </trans-unit>
+      <trans-unit id="1773f5b28064334c5c7b3a637e962b7c" resname="article.form.htags">
+        <source>article.form.htags</source>
+        <target>hashtags</target>
+      </trans-unit>
+      <trans-unit id="95b1956470e5916582212646d125fc5a" resname="article.form.htags.help">
+        <source>article.form.htags.help</source>
+        <target>__article.form.htags.help</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
