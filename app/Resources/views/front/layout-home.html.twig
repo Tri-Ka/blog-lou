@@ -10,6 +10,8 @@
         <meta property="og:description"        content="{{ get_setting('application_subname') }}" />
         <meta property="og:image"              content="{{ renderSiteCover() }}" />
 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
         <link rel="stylesheet" type="text/css" href="{{ asset('build/front.css') }}">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
