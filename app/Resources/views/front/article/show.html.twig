@@ -1,5 +1,11 @@
 {% extends 'front/layout.html.twig' %}
 
+{% block metaOgUrl %}{{ absolute_url(path('article_show', {'id' : article.id})) }}{% endblock %}
+{% block metaOgType %}article{% endblock %}
+{% block metaOgTitle %}{{ article.title }}{% endblock %}
+{% block metaOgDescription %}{{ article.content|striptags|truncate(200)|raw }}{% endblock %}
+{% block metaOgImage %}{{ absolute_url(vich_uploader_asset(article, 'imageFile')) }}{% endblock %}
+
 {% block body %}
 	<div class="container container--main">
 		<div class="row">

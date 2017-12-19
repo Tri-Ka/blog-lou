@@ -4,6 +4,13 @@
         <meta charset="UTF-8" />
         <title>{% block title %}{{ get_setting('application_name') }}{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('build/front.css') }}">
+
+        <meta property="og:url"                content="{% block metaOgUrl %}{{ absolute_url(path('homepage')) }}{% endblock %}" />
+        <meta property="og:type"               content="{% block metaOgType %}blog{% endblock %}" />
+        <meta property="og:title"              content="{% block metaOgTitle %}{{ get_setting('application_name') }}{% endblock %}" />
+        <meta property="og:description"        content="{% block metaOgDescription %}{{ get_setting('application_subname') }}{% endblock %}" />
+        <meta property="og:image"              content="{% block metaOgImage %}{{ renderSiteCover() }}{% endblock %}" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />

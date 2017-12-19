@@ -10,10 +10,11 @@ use AppBundle\Repository\ArticleRepository;
 class FrontController extends Controller
 {
     /**
-     * @Route("/{page}", name="homepage", defaults={"page" = 1})
+     * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request, $page)
+    public function indexAction(Request $request)
     {
+        $page = null === $request->query->get('page') ? 1 : $request->query->get('page');
         $tags = [];
         $articles =  $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
 
