@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+
         <title>{% block title %}{{ get_setting('application_name') }}{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('build/front.css') }}">
 
         <meta property="og:url"                content="{% block metaOgUrl %}{{ absolute_url(path('homepage')) }}{% endblock %}" />
         <meta property="og:type"               content="{% block metaOgType %}blog{% endblock %}" />
@@ -12,7 +12,10 @@
         <meta property="og:image"              content="{% block metaOgImage %}{{ renderSiteCover() }}{% endblock %}" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="{{ asset('build/front.css') }}">
+
         {% block stylesheets %}{% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -33,6 +36,8 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
         </script>
+
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a548ec68b69670013a359ea&product=sticky-share-buttons"></script>
 
         {% block javascriptsExternal %}{% endblock %}
         <script type="text/javascript" src="{{ asset('build/front.js') }}"></script>

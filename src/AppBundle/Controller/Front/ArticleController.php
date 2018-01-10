@@ -12,7 +12,7 @@ class ArticleController extends Controller
     public function recentArticlesAction($max = 4)
     {
         return $this->render('front/article/recent.html.twig', [
-            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->getList(1, 4)
+            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->getList(1, $max)
         ]);
     }
 
@@ -23,6 +23,16 @@ class ArticleController extends Controller
     {
         return $this->render('front/article/show.html.twig', [
             'article' => $article,
+        ]);
+    }
+
+    /**
+     * @Route("/article/random{id}", name="article_random")
+     */
+    public function randomAction($id)
+    {
+        return $this->render('front/article/random.html.twig', [
+            'articles' => $this->getDoctrine()->getRepository('AppBundle:Article')->findRandom($id)
         ]);
     }
 }

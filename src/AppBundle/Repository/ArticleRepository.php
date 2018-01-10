@@ -46,9 +46,20 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     public function findByContent($content)
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.content LIKE :content OR a.title LIKE :content')
+            ->andWhere('a.content LIKE :content OR a.title LIKE :content OR a.htags LIKE :content')
             ->orderBy('a.createdAt', 'DESC')
             ->setParameter('content', '%'.$content.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findRandom($id)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.id != :id')
+            ->orderBy('RAND()')
+            ->setParameter('id', $id)
+            ->setMaxResults(3)
             ->getQuery()
             ->getResult();
     }

@@ -1,0 +1,13 @@
+<div class="mt-5">
+	<h3 class="widget-title">
+	    Ca peut vous intéresser
+	</h3>
+
+	<div class="row grid articles-list small-article-list">
+		{% for article in articles %}
+			<div class="col-xs-12 col-sm-12 col-md-4 grid-item">
+				{% include 'front/article/thumb.html.twig' %}
+			</div>
+		{% endfor %}
+	</div>
+</div>

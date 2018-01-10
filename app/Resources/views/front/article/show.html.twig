@@ -29,6 +29,8 @@
 						{% endautoescape %}
 					</div>
 
+					<div class="sharethis-inline-share-buttons mb-4"></div>
+
 					<div class="blog-post__tags">
 						<h2>
 							Tags associés:
@@ -54,6 +56,8 @@
 						</div>
 					</div>
 				</div>
+
+				{{ render(controller('AppBundle:Front/Article:random', { 'id': article.id })) }}
 			</div>
 
 			<div class="col-sm-3 col-xs-12">

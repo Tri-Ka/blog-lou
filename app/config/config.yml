@@ -63,6 +63,10 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+        dql:
+            numeric_functions:
+                rand: DoctrineExtensions\Query\Mysql\Rand
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
@@ -89,4 +93,30 @@ vich_uploader:
             namer:              vich_uploader.namer_uniqid
             inject_on_load:     false
             delete_on_update:   true
+            delete_on_remove:
+
+        picture_image:
+            uri_prefix:         /images/pictures
+            upload_destination: '%kernel.root_dir%/../web/images/pictures'
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     false
+            delete_on_update:   true
             delete_on_remove:   true
+
+liip_imagine :
+    resolvers :
+        default :
+            web_path : ~
+
+    filter_sets :
+        cache : ~
+
+        gallery_thumb :
+            filters:
+                scale:
+                    dim: [ 350, 350 ]
+
+        gallery_modal :
+            filters:
+                scale:
+                    dim: [ 800, 400 ]

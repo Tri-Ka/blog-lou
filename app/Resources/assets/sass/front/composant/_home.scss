@@ -259,3 +259,27 @@ footer .popular-tags {
 	}
 }
 
+
+.small-article-list {
+	.card {
+		.card-img-top {
+			height: 140px !important;
+		}
+
+		.card-title {
+			font-size: 17px;
+		}
+
+		.card-text {
+			display: none;
+		}
+
+		.card-tags {
+			display: none;
+		}
+
+		.card-comments {
+			display: none;
+		}
+	}
+}

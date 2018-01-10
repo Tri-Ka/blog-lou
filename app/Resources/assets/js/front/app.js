@@ -22,4 +22,8 @@ $(document).ready(function() {
 			});
 		});
     }
+
+    $('[data-load-later').each(function(index, element){
+        $(element).attr("src", $(element).attr("data-src"));
+    });
 });

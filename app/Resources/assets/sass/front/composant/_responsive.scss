@@ -9,10 +9,16 @@ $break-large: 992px;
 
 	header .navbar-brand {
 		position: absolute;
-		padding: 20px;
+		padding: 15px;
 		margin: 0;
 		top: 0;
 		right: 0;
+
+		img {
+			width: auto;
+		    max-width: 250px;
+    		max-height: 40px;
+		}
 	}
 
 	header.home-header .navbar-collapse {

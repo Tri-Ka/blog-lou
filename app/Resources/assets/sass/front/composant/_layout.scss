@@ -76,10 +76,11 @@ header {
 	}
 
 	.navbar-brand {
-		padding: 1.5em;
+		padding: .5em 1em;
 
 		img {
-			width: 280px;
+		    max-width: 280px;
+    		max-height: 100px;
 		}
 	}
 }
@@ -170,4 +171,20 @@ footer {
 
 .colored {
 	color: $color-main;
+}
+
+.modal-backdrop.show {
+	opacity: .9;
+}
+
+.img-thumbnail {
+	border-radius: 0;
+}
+
+#st-2 .st-btn:hover > span {
+	font-size: 12px;
+}
+
+.st-logo {
+	display: none;
 }

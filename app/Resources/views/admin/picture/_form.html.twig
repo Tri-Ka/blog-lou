@@ -1,0 +1,53 @@
+{{ form_start(form, { attr: { class: 'form' } }) }}
+    <div class="card-body">
+	    {{ form_errors(form) }}
+
+	    <div class="row">
+	    	<div class="col-md-6">
+	    		<div class="form-group">
+	    			<img class="img-thumbnail" src="{{ vich_uploader_asset(picture, 'imageFile') }}">
+	    		</div>
+	    	</div>
+
+	    	<div class="col-md-6">
+				<div class="form-group">
+				    {{ form_row(form.imageFile, {
+				        label: 'picture.form.imageFile',
+				        help: 'picture.form.imageFile.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="form-group">
+				    {{ form_row(form.title, {
+				        label: 'picture.form.title',
+				        help: 'picture.form.title.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+
+	    		<div class="form-group">
+				    {{ form_row(form.content, {
+				        label: 'picture.form.content',
+				        help: 'picture.form.content.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+				</div>
+	    	</div>
+	    </div>
+    </div>
+
+    <div class="card-footer text-right">
+    	<a href="{{ url('admin_picture_list') }}" class="btn btn-default">
+            <i class="fa fa-undo"></i>
+            {{ 'admin.form.cancel'|trans }}
+        </a>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check"></i>
+            {{ 'admin.form.save'|trans }}
+        </button>
+    </div>
+{{ form_end(form) }}
