@@ -8,3 +8,16 @@
 	z-index: 10;
 	color: #fff;
 }
+
+#mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
+    color: #e4e4e4;
+    background: rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #505050;
+}
+
+@media (min-width: 992px) {
+	#mainNav .navbar-collapse .navbar-sidenav {
+	    margin-top: 64px;
+	}
+}

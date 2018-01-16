@@ -2,12 +2,13 @@
 
 namespace AppBundle\Type;
 
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Entity\Category;
 
 class ArticleType extends AbstractType
 {
@@ -20,6 +21,11 @@ class ArticleType extends AbstractType
         ]);
         $builder->add('imageFile', VichImageType::class, ['required' => false]);
         $builder->add('htags');
+        $builder->add('categories', EntityType::class, array(
+            'class' => Category::class,
+            'choice_label' => 'name',
+            'multiple' => true,
+        ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

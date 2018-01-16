@@ -6,6 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
  * @ORM\Table(name="article")
@@ -65,6 +68,17 @@ class Article
      * @var string
      */
     private $htags;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="articles")
+     * @ORM\JoinTable(name="articles_categories")
+     */
+    private $categories;
+
+    public function __construct()
+    {
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id.
@@ -217,5 +231,16 @@ class Article
         }
 
         return $tags;
+    }
+
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category)
+    {
+        $category->addArticle($this);
+        $this->categories[] = $category;
     }
 }
