@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Category;
+use Tetranz\Select2EntityBundle\Form\Type\Select2EntityType;
 
 class ArticleType extends AbstractType
 {
@@ -25,6 +26,8 @@ class ArticleType extends AbstractType
             'class' => Category::class,
             'choice_label' => 'name',
             'multiple' => true,
+            'choices_as_values' => true,
+            'attr' => ['data-select2' => 'true']
         ));
     }
 

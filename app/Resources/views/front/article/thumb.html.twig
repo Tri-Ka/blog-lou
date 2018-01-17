@@ -18,24 +18,24 @@
             {% autoescape %}
                 {{ article.content|striptags|truncate(200)|raw|nl2br }}
             {% endautoescape %}
+
+            <a href="{{ path('article_show', { 'id' : article.id }) }}" class="card-comments">
+                <i class="fa fa-comment-o"></i> <fb:comments-count href="{{ absolute_url(path('article_show', { 'id' : article.id })) }}"></fb:comments-count>
+            </a>
     	</div>
 
-    	{% if article.htags %}
+    	{% if article.categories %}
     		<div class="card-tags">
     			<ul>
-    				{% for tag in article.htagsArray %}
+    				{% for category in article.categories %}
     					<li>
-    						<a href="{{ path('tag_search', { 'tag' : tag }) }}" class="">
-    							{{ tag }}
+    						<a href="{{ path('category_search', { 'id' : category.id }) }}" class="">
+    							{{ category.name }}
     						</a>
     					</li>
     				{% endfor %}
     			</ul>
     		</div>
     	{% endif %}
-
-    	<a href="{{ path('article_show', { 'id' : article.id }) }}" class="card-comments">
-			<i class="fa fa-comment-o"></i> <fb:comments-count href="{{ absolute_url(path('article_show', { 'id' : article.id })) }}"></fb:comments-count>
-        </a>
     </div>
 </div>

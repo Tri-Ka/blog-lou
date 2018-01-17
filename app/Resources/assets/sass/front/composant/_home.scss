@@ -76,6 +76,7 @@ a.btn-round {
 				.card-text {
 					font-size: 13px;
 					padding-bottom: 30px;
+					position: relative;
 				}
 
 				.card-tags {
@@ -110,11 +111,12 @@ a.btn-round {
 					height: 40px;
 					line-height: 40px;
 					position: absolute;
-				    bottom: 45px;
-    				right: 40px;
+					bottom: -20px;
+    				right: 0;
 					padding: 0 17px;
 					border-radius: 100px;
 					transition: all .3s !important;
+					font-size: 1rem;
 
 					&:hover,
 					&:focus {

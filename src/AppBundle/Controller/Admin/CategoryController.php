@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Type\CategoryType;
 use AppBundle\Entity\Category;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/admin/category")
@@ -90,5 +91,26 @@ class CategoryController extends Controller
         $this->get('session')->getFlashBag()->add('notice', 'admin.delete.success');
 
         return $this->redirectToRoute('admin_category_list');
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @Route("/autocomplete", name="ajax_autocomplete")
+     *
+     * @return Response
+     */
+    public function autocompleteAction(Request $request)
+    {
+        $result = [
+            ['id' => 1, 'text' => 'test 1'],
+            ['id' => 2, 'text' => 'test 2']
+        ];
+
+        $response = new JsonResponse($result);
+        var_dump($response);
+        exit;
+
+        return $response;
     }
 }

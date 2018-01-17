@@ -23,6 +23,14 @@
 			    		{{ article.createdAt|date|localizeddate('full', 'none', app.request.locale ) }}
 			    	</div>
 
+			    	<div class="bog-post__categories">
+			    		{% for category in article.categories %}
+    						<a href="{{ path('category_search', { 'id' : category.id }) }}" class="badge badge-info">
+    							{{ category.name }}
+    						</a>
+	    				{% endfor %}
+			    	</div>
+
 					<div class="blog-post__content">
 						{% autoescape %}
 							{{ article.content|raw }}

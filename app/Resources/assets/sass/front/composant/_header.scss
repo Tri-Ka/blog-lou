@@ -1,15 +1,21 @@
 .header {
-	height: 460px;
-	line-height: 500px;
+	min-height: 460px;
+	/*line-height: 500px;*/
 	background-color: #ffc107;
 	color: #fff;
     background-size: cover;
     background-position: center;
 
+    img {
+        width: 100%;
+    }
+
 	.header__title {
 	    display: inline-block;
     	margin: auto;
     	width: 100%;
+        position: absolute;
+        top: 50%;
 
     	h1 {
     		font-weight: bold;

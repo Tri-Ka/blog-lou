@@ -15,20 +15,7 @@ class FrontController extends Controller
     public function indexAction(Request $request)
     {
         $page = null === $request->query->get('page') ? 1 : $request->query->get('page');
-        $tags = [];
-        $articles =  $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
-
-        foreach ($articles as $article) {
-            $articleTags = explode('#', $article->getHtags());
-
-            foreach ($articleTags as $articleTag) {
-                $articleTag = trim($articleTag);
-                if ('' !== $articleTag) {
-                    $tags[$articleTag] = '#'.$articleTag;
-                }
-            }
-        }
-
+        $categories =  $this->getDoctrine()->getRepository('AppBundle:Category')->findAll();
         $articles = $this->getDoctrine()->getRepository('AppBundle:Article')->getList($page);
 
         $pagination = array(
@@ -40,7 +27,7 @@ class FrontController extends Controller
 
         return $this->render('front/default/index.html.twig', [
             'articles' => $articles,
-            'tags' => $tags,
+            'categories' => $categories,
             'pagination' => $pagination
         ]);
     }

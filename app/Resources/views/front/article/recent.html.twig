@@ -9,9 +9,9 @@
 
                     <div class="last-article__content">
                         <span class="last-article__content__tags">
-                            {% for tag in article.htagsArray %}
-                                <a href="#" class="">
-                                    {{ tag }}
+                            {% for category in article.categories %}
+                                <a href="{{ path('category_search', { 'id' : category.id }) }}" class="">
+                                    {{ category.name }}
                                 </a>
                             {% endfor %}
                         </span>

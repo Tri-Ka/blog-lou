@@ -46,8 +46,9 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     public function findByContent($content)
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.content LIKE :content OR a.title LIKE :content OR a.htags LIKE :content')
+            ->leftJoin('a.categories', 'c')
             ->orderBy('a.createdAt', 'DESC')
+            ->andWhere('a.content LIKE :content OR a.title LIKE :content OR a.htags LIKE :content OR c.name LIKE :content')
             ->setParameter('content', '%'.$content.'%')
             ->getQuery()
             ->getResult();
@@ -60,6 +61,17 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
             ->orderBy('RAND()')
             ->setParameter('id', $id)
             ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findByCategory($categoryId)
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.categories', 'c')
+            ->orderBy('a.createdAt', 'DESC')
+            ->andWhere('c.id = :categoryId')
+            ->setParameter('categoryId', $categoryId)
             ->getQuery()
             ->getResult();
     }

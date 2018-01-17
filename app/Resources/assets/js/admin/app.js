@@ -21,6 +21,7 @@ import fontawesome from '@fortawesome/fontawesome'
 import { faUser } from '@fortawesome/fontawesome-free-solid'
 import { faCircle } from '@fortawesome/fontawesome-free-regular'
 import { faFacebook } from '@fortawesome/fontawesome-free-brands'
+import { select2 } from 'select2'
 
 fontawesome.icon(faUser)
 fontawesome.icon(faCircle)
@@ -58,4 +59,8 @@ $(document).ready(function() {
             external_plugins: { "jbimages" : "/jbimages/plugin.min.js"}
         });
     }
+
+    $('select[data-select2="true"').each(function(){
+        $(this).select2()
+    });
 });
