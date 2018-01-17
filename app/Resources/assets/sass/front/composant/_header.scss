@@ -5,6 +5,8 @@
 	color: #fff;
     background-size: cover;
     background-position: center;
+    position: relative;
+    z-index: -1;
 
     img {
         width: 100%;
@@ -15,7 +17,7 @@
     	margin: auto;
     	width: 100%;
         position: absolute;
-        top: 50%;
+        bottom: 50%;
 
     	h1 {
     		font-weight: bold;

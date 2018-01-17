@@ -1,6 +1,6 @@
 {% extends 'front/layout-home.html.twig' %}
 
-{% block body %}
+{% block header %}
 	<div class="header">
 		<img src="{{ renderSiteCover() }}" alt="">
 		<div class="header__title text-center">
@@ -13,7 +13,9 @@
             </h3>
         </div>
 	</div>
+{% endblock %}
 
+{% block body %}
 	<div class="container container--main">
 		<div class="tags-container">
 			<ul class="tags-list">

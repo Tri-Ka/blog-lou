@@ -2,7 +2,9 @@ require('../../sass/front/style.scss');
 
 var $ = require('jquery');
 
-require('bootstrap/dist/js/bootstrap.bundle.js');
+Tether = require('tether/dist/js/tether.js');
+require('bootstrap/dist/js/bootstrap.js');
+
 var imagesLoaded = require('imagesloaded');
 var Masonry = require('masonry-layout');
 

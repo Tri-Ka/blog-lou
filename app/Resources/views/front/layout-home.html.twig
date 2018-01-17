@@ -21,6 +21,7 @@
     <body>
         <header class="home-header">
             {% include 'front/common/navbar.html.twig' %}
+            {% block header %}{% endblock %}
         </header>
 
         {% block body %}{% endblock %}

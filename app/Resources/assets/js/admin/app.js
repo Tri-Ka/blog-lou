@@ -7,7 +7,7 @@ require('../../sass/admin/style.scss');
 var $ = require('jquery');
 
 require('popper.js');
-require('bootstrap/dist/js/bootstrap.bundle.js');
+require('bootstrap/dist/js/bootstrap.js');
 require('jquery-easing');
 
 require('chart.js');

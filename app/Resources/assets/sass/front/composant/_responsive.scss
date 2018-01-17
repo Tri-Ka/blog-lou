@@ -45,4 +45,13 @@ $break-large: 992px;
     		margin-bottom: 1em;
 		}
 	}
+
+	.header {
+		min-height: auto;
+
+		.header__title {
+		    bottom: 30%;
+    		transform: scale(.5);
+		}
+	}
 }
