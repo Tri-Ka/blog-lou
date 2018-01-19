@@ -31,7 +31,7 @@ class Article
     private $title;
 
     /**
-     * @ORM\Column(type="text", name="content", length=1000)
+     * @ORM\Column(type="text", name="content", length=1000, nullable=true)
      *
      * @var string
      */
@@ -55,6 +55,24 @@ class Article
      * @var File
      */
     private $imageFile;
+
+    /**
+    * @ORM\Column(type="string", length=1000, nullable=true))
+    * @var string
+    */
+    private $embededVideo;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true))
+     * @var string
+     */
+    private $video;
+
+    /**
+     * @Vich\UploadableField(mapping="article_video", fileNameProperty="video")
+     * @var File
+     */
+    private $videoFile;
 
     /**
      * @ORM\Column(type="datetime")
@@ -190,6 +208,30 @@ class Article
         return $this->image;
     }
 
+    public function setVideoFile(File $video = null)
+    {
+        $this->videoFile = $video;
+
+        if ($video) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getVideoFile()
+    {
+        return $this->videoFile;
+    }
+
+    public function setVideo($video)
+    {
+        $this->video = $video;
+    }
+
+    public function getVideo()
+    {
+        return $this->video;
+    }
+
     /**
      * Set htags.
      *
@@ -242,5 +284,63 @@ class Article
     {
         $category->addArticle($this);
         $this->categories[] = $category;
+    }
+
+    /**
+     * Set embededVideo
+     *
+     * @param string $embededVideo
+     *
+     * @return Article
+     */
+    public function setEmbededVideo($embededVideo)
+    {
+        $this->embededVideo = $embededVideo;
+
+        return $this;
+    }
+
+    /**
+     * Get embededVideo
+     *
+     * @return string
+     */
+    public function getEmbededVideo()
+    {
+        return $this->embededVideo;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Article
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \AppBundle\Entity\Category $category
+     */
+    public function removeCategory(\AppBundle\Entity\Category $category)
+    {
+        $this->categories->removeElement($category);
     }
 }

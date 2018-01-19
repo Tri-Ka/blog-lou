@@ -1,21 +1,20 @@
 /*
-Error: File to import not found or unreadable: ~font-awesome/scss/font-awesome.
+Error: File to import not found or unreadable: ~bootstrap/scss/bootstrap.
        Load paths:
          Compass::SpriteImporter
          /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass
          /Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets
-        on line 2 of /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/admin/style.scss
+        on line 1 of /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/admin/style.scss
 
-1: @import '~bootstrap/dist/css/bootstrap.min.css';
+1: @import "~bootstrap/scss/bootstrap";
 2: @import '~font-awesome/scss/font-awesome';
 3: @import '~startbootstrap-sb-admin/scss/sb-admin';
 4: @import '~select2/src/scss/core';
 5: 
 6: @import "composant/menu-left";
-7: @import "composant/header";
 
 Backtrace:
-/Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/admin/style.scss:2
+/Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/admin/style.scss:1
 /Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/tree/import_node.rb:45:in `import'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.4.25/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -62,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~font-awesome/scss/font-awesome.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass\A          /Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets\A         on line 2 of /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/admin/style.scss\A \A 1: @import '~bootstrap/dist/css/bootstrap.min.css';\A 2: @import '~font-awesome/scss/font-awesome';\A 3: @import '~startbootstrap-sb-admin/scss/sb-admin';\A 4: @import '~select2/src/scss/core';\A 5: \A 6: @import \"composant/menu-left\";\A 7: @import \"composant/header\";"; }
+  content: "Error: File to import not found or unreadable: ~bootstrap/scss/bootstrap.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass\A          /Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets\A         on line 1 of /Users/etienne/Sites/perso_lou_blog/app/Resources/assets/sass/admin/style.scss\A \A 1: @import \"~bootstrap/scss/bootstrap\";\A 2: @import '~font-awesome/scss/font-awesome';\A 3: @import '~startbootstrap-sb-admin/scss/sb-admin';\A 4: @import '~select2/src/scss/core';\A 5: \A 6: @import \"composant/menu-left\";"; }

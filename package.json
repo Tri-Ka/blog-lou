@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-free-regular": "^5.0.1",
     "browserify": "^14.5.0",
     "jquery": "^3.2.1",
+    "popper": "^1.0.1",
     "select2": "^4.0.6-rc.1",
     "select2-browserify": "^3.4.5"
   },
@@ -23,7 +24,7 @@
     "@fortawesome/fontawesome": "^1.0.1",
     "@fortawesome/fontawesome-free-solid": "^5.0.1",
     "@symfony/webpack-encore": "^0.17.0",
-    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap": "^4.0.0-beta.3",
     "bootstrap-sass": "^3.3.7",
     "compass": "^0.1.1",
     "datatable": "^2.0.2",

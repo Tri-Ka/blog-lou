@@ -2,7 +2,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <p>
                         {{ get_setting('footer_text')|nl2br }}
                     </p>
@@ -34,11 +34,11 @@
                     </ul>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     {{ render(controller('AppBundle:Front/Article:recentArticles', { 'max': 4 })) }}
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     {{ render(controller('AppBundle:Front/Tags:popular')) }}
                 </div>
             </div>

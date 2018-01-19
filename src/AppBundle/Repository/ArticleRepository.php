@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
-    const NB_PER_PAGE = 10;
+    const NB_PER_PAGE = 6;
 
     public function getList($page = 1, $nbMax = self::NB_PER_PAGE)
     {

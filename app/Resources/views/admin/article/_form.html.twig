@@ -19,6 +19,41 @@
 			    </div>
 			</div>
 
+			<div class="col-md-6">
+	    		<div class="form-group">
+	    			{% if null != article.video %}
+						<video width="100%" controls class="blog-post__video">
+						  	<source src="{{ vich_uploader_asset(article, 'videoFile') }}">
+							Your browser does not support the video tag.
+						</video>
+					{% elseif null != article.embededVideo %}
+						<div class="embeded-video-container">
+							{{ article.embededVideo|raw }}
+						</div>
+					{% endif %}
+	    		</div>
+	    	</div>
+
+	    	<div class="col-md-6">
+				<div class="form-group">
+				    {{ form_row(form.videoFile, {
+				        label: 'article.form.videoFile',
+				        help: 'article.form.videoFile.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+
+			    <div class="text-center">ou</div>
+
+			    <div class="form-group">
+				    {{ form_row(form.embededVideo, {
+				        label: 'article.form.embededVideo',
+				        help: 'article.form.embededVideo.help',
+				        attr: {'class' : 'form-control'}
+				    }) }}
+			    </div>
+			</div>
+
 			<div class="col-md-12">
 				<div class="form-group">
 				    {{ form_row(form.title, {
