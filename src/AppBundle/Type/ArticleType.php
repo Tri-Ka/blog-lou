@@ -11,6 +11,7 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Category;
 use Tetranz\Select2EntityBundle\Form\Type\Select2EntityType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class ArticleType extends AbstractType
 {
@@ -30,7 +31,7 @@ class ArticleType extends AbstractType
             'multiple' => true,
             'choices_as_values' => true,
             'attr' => ['data-select2' => 'true'],
-            'required' => false
+            'required' => false,
         ]);
 
         $builder->add('embededVideo', TextareaType::class, ['required' => false]);

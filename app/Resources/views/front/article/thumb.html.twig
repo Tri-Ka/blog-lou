@@ -1,5 +1,14 @@
 <div class="card">
-	{% if article.image %}
+    {% if null != article.video %}
+        <video width="100%" controls class="">
+            <source src="{{ vich_uploader_asset(article, 'videoFile') }}">
+            Your browser does not support the video tag.
+        </video>
+    {% elseif null != article.embededVideo %}
+        <div class="embeded-video-container">
+            {{ article.embededVideo|raw }}
+        </div>
+    {% elseif article.image %}
         <a href="{{ path('article_show', { 'id' : article.id }) }}">
             <div class="card-img-top" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})" data-holder-rendered="true"></div>
         </a>
@@ -20,7 +29,7 @@
             {% endautoescape %}
 
             <a href="{{ path('article_show', { 'id' : article.id }) }}" class="card-comments">
-                <i class="fa fa-comment-o"></i> <fb:comments-count href="{{ absolute_url(path('article_show', { 'id' : article.id })) }}"></fb:comments-count>
+                <i class="far fa-comments"></i> <fb:comments-count href="{{ absolute_url(path('article_show', { 'id' : article.id })) }}"></fb:comments-count>
             </a>
     	</div>
 

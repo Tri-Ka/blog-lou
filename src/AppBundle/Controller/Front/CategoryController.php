@@ -21,6 +21,7 @@ class CategoryController extends Controller
         return $this->render('front/search/result.html.twig', [
             'content' => $category->getName(),
             'articles' => $articles,
+            'searchType' => 'la categorie'
         ]);
     }
 }

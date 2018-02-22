@@ -62,6 +62,8 @@ $(document).ready(function() {
     }
 
     $('select[data-select2="true"').each(function(){
-        $(this).select2()
+        $(this).select2({
+            // tags: true
+        })
     });
 });

@@ -30,6 +30,7 @@ class SearchController extends Controller
             return $this->render('front/search/result.html.twig', [
                 'content' => $datas['content'],
                 'articles' => $articles,
+                'searchType' => 'le contenu'
             ]);
         }
 

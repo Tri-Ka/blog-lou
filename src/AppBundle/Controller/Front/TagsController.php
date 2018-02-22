@@ -37,9 +37,10 @@ class TagsController extends Controller
     {
         $articles =  $this->getDoctrine()->getRepository('AppBundle:Article')->findByTag($tag);
 
-        return $this->render('front/tags/search.html.twig', [
-            'tag' => $tag,
+        return $this->render('front/search/result.html.twig', [
+            'content' => $tag,
             'articles' => $articles,
+            'searchType' => 'le tag'
         ]);
     }
 }

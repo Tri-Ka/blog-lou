@@ -61,6 +61,14 @@
             </div>
         </nav>
 
+        {% for label, messages in app.flashes(['warning', 'error', 'notice']) %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
         <div class="content-wrapper">
             <div class="container-fluid">
                 {% block main %}

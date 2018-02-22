@@ -53,6 +53,7 @@ body a h1, body a h2, body a h3, body a h4, body a h5, body a h6 {
 			border-radius: 0;
 			background: #efefef;
 			border-color: transparent;
+			color: #000;
 
 			&:hover,
 			&:focus {
@@ -192,4 +193,34 @@ footer {
 
 .input-group .input-group-btn .btn {
 	height: 100%;
+	padding: 0 20px;
+}
+
+.alert {
+	text-align: center;
+    border-radius: 0;
+    color: #fff;
+
+    &.alert-notice {
+    	background: #8BC34A;
+    }
+
+    &.alert-error {
+    	background: #F44336;
+    }
+
+    &.alert-warning {
+    	background: #FF9800;
+    }
+}
+
+.btn-primary {
+	background: $color-main;
+	border-color: $color-main;
+
+	&:hover,
+	&:focus {
+		background: darken($color-main, 5%);
+		border-color: darken($color-main, 5%);
+	}
 }
