@@ -23,7 +23,7 @@
 					{% endif %}
 
 					<div class="blog-post">
-						{% if null == article.video and null == article.embededVideo %}
+						{% if null == article.video and null == article.embededVideo and null != article.image %}
 							<a href="#" data-toggle="modal" data-target="#modal-post">
 								<div class="blog-post__img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})"></div>
 							</a>

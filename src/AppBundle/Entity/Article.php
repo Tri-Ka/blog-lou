@@ -81,7 +81,7 @@ class Article
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="text", name="htags", length=1000)
+     * @ORM\Column(type="text", name="htags", length=1000, nullable=true)
      *
      * @var string
      */
@@ -166,6 +166,7 @@ class Article
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+        $this->updatedAt = $createdAt;
 
         return $this;
     }
