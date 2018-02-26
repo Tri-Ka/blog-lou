@@ -1,9 +1,3 @@
-// css
-
-require('../../sass/admin/style.scss');
-
-// js
-
 var $ = require('jquery');
 
 require('popper.js');
@@ -18,15 +12,22 @@ require('datatables.net-bs4');
 require('startbootstrap-sb-admin/js/sb-admin.min.js');
 require('startbootstrap-sb-admin/js/sb-admin-datatables.min.js');
 
-import fontawesome from '@fortawesome/fontawesome'
-import { faUser } from '@fortawesome/fontawesome-free-solid'
-import { faCircle } from '@fortawesome/fontawesome-free-regular'
-import { faFacebook } from '@fortawesome/fontawesome-free-brands'
-import { select2 } from 'select2'
+import fontawesome from '@fortawesome/fontawesome';
 
-fontawesome.icon(faUser)
-fontawesome.icon(faCircle)
-fontawesome.icon(faFacebook)
+import faNewspaper from '@fortawesome/fontawesome-free-regular/faNewspaper';
+import faImages from '@fortawesome/fontawesome-free-regular/faImages';
+
+import faTachometerAlt from '@fortawesome/fontawesome-free-solid/faTachometerAlt';
+import faTags from '@fortawesome/fontawesome-free-solid/faTags';
+import faWrench from '@fortawesome/fontawesome-free-solid/faWrench';
+
+fontawesome.library.add(
+    faTachometerAlt,
+    faNewspaper,
+    faTags,
+    faImages,
+    faWrench
+);
 
 if (0 < $('[data-chart]').length) {
 	require('startbootstrap-sb-admin/js/sb-admin-charts.min.js');

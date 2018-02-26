@@ -1,54 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
+{% extends 'front/layout.html.twig' %}
 
-        <title>{% block title %}{{ get_setting('application_name') }}{% endblock %}</title>
-
-        <meta property="og:url"                content="{% block metaOgUrl %}{{ absolute_url(path('homepage')) }}{% endblock %}" />
-        <meta property="og:type"               content="{% block metaOgType %}blog{% endblock %}" />
-        <meta property="og:title"              content="{% block metaOgTitle %}{{ get_setting('application_name') }}{% endblock %}" />
-        <meta property="og:description"        content="{% block metaOgDescription %}{{ get_setting('application_subname') }}{% endblock %}" />
-        <meta property="og:image"              content="{% block metaOgImage %}{{ renderSiteCover() }}{% endblock %}" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" type="text/css" href="{{ asset('build/front.css') }}">
-
-        {% block stylesheets %}{% endblock %}
-
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        <header class="home-header">
-            {% include 'front/common/navbar.html.twig' %}
-            {% block header %}{% endblock %}
-        </header>
-
-        {% for label, messages in app.flashes(['warning', 'error', 'notice']) %}
-            {% for message in messages %}
-                <div class="alert alert-{{ label }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endfor %}
-
-        {% block body %}{% endblock %}
-
-        {% include 'front/common/footer.html.twig' %}
-
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11&appId=265315956922705';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        </script>
-
-        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a548ec68b69670013a359ea&product=sticky-share-buttons"></script>
-
-        {% block javascriptsExternal %}{% endblock %}
-        <script type="text/javascript" src="{{ asset('build/front.js') }}"></script>
-    </body>
-</html>
+{% block bigHeader %}
+    <header class="home-header">
+        {% include 'front/common/navbar.html.twig' %}
+        {% block header %}{% endblock %}
+    </header>
+{% endblock %}

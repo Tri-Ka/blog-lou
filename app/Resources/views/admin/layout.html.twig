@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('build/admin.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/admin.css') }}">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -25,35 +25,35 @@
                 <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                         <a class="nav-link" href="{{ path('admin') }}">
-                            <i class="fa fa-fw fa-dashboard"></i>
+                            <i class="fas fa-tachometer-alt"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="articles">
                         <a class="nav-link" href="{{ path('admin_article_list') }}">
-                            <i class="fa fa-fw fa-newspaper-o"></i>
+                            <i class="far fa-newspaper"></i>
                             <span class="nav-link-text">Articles</span>
                         </a>
                     </li>
 
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="categories">
                         <a class="nav-link" href="{{ path('admin_category_list') }}">
-                            <i class="fa fa-fw fa-newspaper-o"></i>
+                            <i class="fas fa-tags"></i>
                             <span class="nav-link-text">Categories</span>
                         </a>
                     </li>
 
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="pictures">
                         <a class="nav-link" href="{{ path('admin_picture_list') }}">
-                            <i class="fa fa-fw fa-picture-o"></i>
+                            <i class="far fa-images"></i>
                             <span class="nav-link-text">Gallerie</span>
                         </a>
                     </li>
 
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="settings">
                         <a class="nav-link" href="{{ path('dmishh_settings_manage_global') }}">
-                            <i class="fa fa-fw fa-gears"></i>
+                            <i class="fas fa-wrench"></i>
                             <span class="nav-link-text">Configuration</span>
                         </a>
                     </li>
@@ -109,7 +109,7 @@
         </div>
 
         {% block javascriptsExternal %}{% endblock %}
-        <script type="text/javascript" src="{{ asset('build/admin.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/admin/admin.js') }}"></script>
     </body>
 </html>
 

@@ -1,5 +1,3 @@
-require('../../sass/front/style.scss');
-
 var $ = require('jquery');
 
 var Tether = require('tether/dist/js/tether.js');
@@ -11,8 +9,10 @@ var Masonry = require('masonry-layout');
 imagesLoaded.makeJQueryPlugin( $ );
 
 import fontawesome from '@fortawesome/fontawesome';
+
 import faComments from '@fortawesome/fontawesome-free-regular/faComments';
 import faEnvelope from '@fortawesome/fontawesome-free-regular/faEnvelope';
+
 import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
 
 import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF';
