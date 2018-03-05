@@ -5,89 +5,93 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="15355e89f75f8f5cddedf27de162ac80" resname="admin.form.cancel">
+      <trans-unit id="A3gz.fy" resname="admin.form.cancel">
         <source>admin.form.cancel</source>
         <target>Annuler</target>
       </trans-unit>
-      <trans-unit id="c775164ce0d6a59c21b0b39543bea7f4" resname="admin.form.save">
+      <trans-unit id="XcXMiN9" resname="admin.form.save">
         <source>admin.form.save</source>
         <target>Enregistrer</target>
       </trans-unit>
-      <trans-unit id="b9300e0c1d78075dc4b3ddcb6bbc370f" resname="admin.logo.delete">
+      <trans-unit id="pSmgRVk" resname="admin.logo.delete">
         <source>admin.logo.delete</source>
         <target>Supprimer</target>
       </trans-unit>
-      <trans-unit id="0738b4db2cb26169832cc5d976e4d9dd" resname="article.form.imageFile">
+      <trans-unit id="wILtXqp" resname="article.form.imageFile">
         <source>article.form.imageFile</source>
         <target>Image</target>
       </trans-unit>
-      <trans-unit id="36bdb95fc46a778cd3a8644a414add1d" resname="article.form.imageFile.help">
+      <trans-unit id="0vjTQzY" resname="article.form.imageFile.help">
         <source>article.form.imageFile.help</source>
-        <target>__article.form.imageFile.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="b778925da837e2fedbb6e3ad5e18bab2" resname="article.form.title">
+      <trans-unit id="aw3g683" resname="article.form.title">
         <source>article.form.title</source>
         <target>Titre</target>
       </trans-unit>
-      <trans-unit id="bed131907682ea72992ca66f538a275c" resname="article.form.title.help">
+      <trans-unit id="YBX2u7x" resname="article.form.title.help">
         <source>article.form.title.help</source>
-        <target>__article.form.title.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="8aec335192a39a4ac2d78313d12592fc" resname="article.form.content">
+      <trans-unit id="zL12aOQ" resname="article.form.content">
         <source>article.form.content</source>
         <target>Contenu</target>
       </trans-unit>
-      <trans-unit id="91816634d5b03b9d6b21dafc99a246f5" resname="article.form.content.help">
+      <trans-unit id="4i5caOz" resname="article.form.content.help">
         <source>article.form.content.help</source>
-        <target>__article.form.content.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="1773f5b28064334c5c7b3a637e962b7c" resname="article.form.htags">
+      <trans-unit id="qwibKAa" resname="article.form.htags">
         <source>article.form.htags</source>
         <target>hashtags</target>
       </trans-unit>
-      <trans-unit id="95b1956470e5916582212646d125fc5a" resname="article.form.htags.help">
+      <trans-unit id="Zyjkgo1" resname="article.form.htags.help">
         <source>article.form.htags.help</source>
-        <target>__article.form.htags.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="4f617dea8a7c76f823d13533f0308804" resname="settings.form.facebook_url">
+      <trans-unit id="WVV51fv" resname="settings.form.facebook_url">
         <source>settings.form.facebook_url</source>
         <target>Facebook url</target>
       </trans-unit>
-      <trans-unit id="89c671c8b0a38fcc328e77c44a3a6376" resname="settings.form.facebook_url.help">
+      <trans-unit id="79EdxTb" resname="settings.form.facebook_url.help">
         <source>settings.form.facebook_url.help</source>
-        <target>__settings.form.facebook_url.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="3ab80b0fc0a16203acab64507ba0ab33" resname="settings.form.twitter_url">
+      <trans-unit id="73w6RZZ" resname="settings.form.twitter_url">
         <source>settings.form.twitter_url</source>
         <target>Twitter url</target>
       </trans-unit>
-      <trans-unit id="b410b8480ae3f69eb083c64998860b3c" resname="settings.form.twitter_url.help">
+      <trans-unit id="YELBl3n" resname="settings.form.twitter_url.help">
         <source>settings.form.twitter_url.help</source>
-        <target>__settings.form.twitter_url.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="7f977ad330eb10a2d35174b09a518c76" resname="settings.form.google_url">
+      <trans-unit id="FuyScas" resname="settings.form.google_url">
         <source>settings.form.google_url</source>
         <target>Google url</target>
       </trans-unit>
-      <trans-unit id="3560ea881d6853664339b17163e218b3" resname="settings.form.google_url.help">
+      <trans-unit id="qhctopD" resname="settings.form.google_url.help">
         <source>settings.form.google_url.help</source>
-        <target>__settings.form.google_url.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="1c88ac9666b37b8d45de5c3a2e3824ef" resname="settings.form.footer_text">
+      <trans-unit id="bQh7YDu" resname="settings.form.footer_text">
         <source>settings.form.footer_text</source>
         <target>Texte du footer</target>
       </trans-unit>
-      <trans-unit id="5022dd918d02d1245972f3fd0b49d238" resname="settings.form.footer_text.help">
+      <trans-unit id="jwSdUcd" resname="settings.form.footer_text.help">
         <source>settings.form.footer_text.help</source>
-        <target>__settings.form.footer_text.help</target>
+        <target></target>
       </trans-unit>
-      <trans-unit id="97ae3c1d53099876b4b6676323e7842c" resname="settings.form.site_url">
+      <trans-unit id="OfW0Kb2" resname="settings.form.site_url">
         <source>settings.form.site_url</source>
         <target>Site URL</target>
       </trans-unit>
-      <trans-unit id="f202dfb441499af16a1041985d832931" resname="settings.form.site_url.help">
+      <trans-unit id="8OiVIz1" resname="settings.form.site_url.help">
         <source>settings.form.site_url.help</source>
-        <target>__settings.form.site_url.help</target>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="eQdSCfK" resname="Envoyer">
+        <source>Envoyer</source>
+        <target>Envoyer</target>
       </trans-unit>
     </body>
   </file>

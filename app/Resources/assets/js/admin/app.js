@@ -12,22 +12,7 @@ require('datatables.net-bs4');
 require('startbootstrap-sb-admin/js/sb-admin.min.js');
 require('startbootstrap-sb-admin/js/sb-admin-datatables.min.js');
 
-import fontawesome from '@fortawesome/fontawesome';
-
-import faNewspaper from '@fortawesome/fontawesome-free-regular/faNewspaper';
-import faImages from '@fortawesome/fontawesome-free-regular/faImages';
-
-import faTachometerAlt from '@fortawesome/fontawesome-free-solid/faTachometerAlt';
-import faTags from '@fortawesome/fontawesome-free-solid/faTags';
-import faWrench from '@fortawesome/fontawesome-free-solid/faWrench';
-
-fontawesome.library.add(
-    faTachometerAlt,
-    faNewspaper,
-    faTags,
-    faImages,
-    faWrench
-);
+import FontAwesome from './modules/FontAwesome';
 
 if (0 < $('[data-chart]').length) {
 	require('startbootstrap-sb-admin/js/sb-admin-charts.min.js');

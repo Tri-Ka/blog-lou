@@ -5,15 +5,15 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="1c2f44022911c805e50fe041c3432db0" resname="settings.form.application_name">
+      <trans-unit id="vJqvUan" resname="settings.form.application_name">
         <source>settings.form.application_name</source>
         <target>Nom du site</target>
       </trans-unit>
-      <trans-unit id="55ed7bc0e392a05fe8cd76630176d42c" resname="settings.form.application_subname">
+      <trans-unit id="4NfmAnu" resname="settings.form.application_subname">
         <source>settings.form.application_subname</source>
         <target>Sous-titre</target>
       </trans-unit>
-      <trans-unit id="9c43086430566631c5084eda69730e4a" resname="settings.form.application_contact_email">
+      <trans-unit id="8nLh24." resname="settings.form.application_contact_email">
         <source>settings.form.application_contact_email</source>
         <target>E-mail de contact</target>
       </trans-unit>

@@ -20,6 +20,7 @@ Encore
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableVersioning()
+    .enablePostCssLoader()
 ;
 
 // export the final configuration
