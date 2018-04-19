@@ -4,6 +4,11 @@ parameters:
     #parameter_name: value
 
 services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
     twig.extension.text:
        class: Twig_Extensions_Extension_Text
        tags:
@@ -16,6 +21,9 @@ services:
 
     app.logo.service:
         class: AppBundle\Services\LogoService
+
     app.cover.service:
         class: AppBundle\Services\CoverService
 
+    AppBundle\Type\ArticleType:
+        autowire: true

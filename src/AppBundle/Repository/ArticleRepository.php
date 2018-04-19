@@ -36,9 +36,10 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     public function findByTag($tag)
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.htags LIKE :tag')
+            ->leftJoin('a.tags', 't')
+            ->andWhere('t.id = :tag')
             ->orderBy('a.createdAt', 'DESC')
-            ->setParameter('tag', '%'.$tag.'%')
+            ->setParameter('tag', $tag)
             ->getQuery()
             ->getResult();
     }

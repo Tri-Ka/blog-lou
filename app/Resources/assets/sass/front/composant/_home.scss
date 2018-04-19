@@ -5,8 +5,8 @@ a.btn-round {
     color: #8d8d8d;
     border: 1px solid #e6e6e6;
     margin: 0 7px;
-    font-size: 13px;
-    font-weight: bold;
+	font-size: 12px;
+    text-transform: uppercase;
 
     &:hover,
 	&:focus,
@@ -192,6 +192,14 @@ a.btn-round {
 		    top: 0;
 		    background-size: cover;
 		    background-position: center;
+
+		    &--blank {
+				background: $color-main;
+				color: #fff;
+				line-height: 76px;
+				text-align: center;
+				font-size: 3em;
+		    }
 		}
 
 		&__content {

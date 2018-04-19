@@ -59,7 +59,7 @@
 							</h2>
 
 							<ul class="blog-post__tags__list popular-tags__list">
-								{% for tag in article.htagsArray %}
+								{% for tag in article.tags %}
 									<li>
 										<a href="{{ path('tag_search', { 'tag' : tag }) }}" class="tag-link">
 											{{ tag }}

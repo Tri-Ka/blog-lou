@@ -6,7 +6,7 @@
     <ul class="popular-tags__list">
         {% for tag in tags %}
             <li>
-                <a href="{{ path('tag_search', { 'tag' : tag }) }}" class="tag-link">
+                <a href="{{ path('tag_search', { 'tag' : tag.id }) }}" class="tag-link">
                     {{ tag }}
                 </a>
             </li>

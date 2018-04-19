@@ -10,11 +10,29 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Category;
-use Tetranz\Select2EntityBundle\Form\Type\Select2EntityType;
+use AppBundle\Entity\Tag;
+use AppBundle\Type\Select2AddType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\EntityManagerInterface;
+use AppBundle\DataTransformer\TagsTransformer;
+use AppBundle\DataTransformer\TagsViewTransformer;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\CallbackTransformer;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Bridge\Doctrine\Form\DataTransformer\CollectionToArrayTransformer;
+use Symfony\Component\Form\Extension\Core\DataTransformer\ChoicesToValuesTransformer;
 
 class ArticleType extends AbstractType
 {
+    protected $em;
+
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title');
@@ -22,9 +40,9 @@ class ArticleType extends AbstractType
             'attr' => ['data-tinymce' => ' '],
             'required' => false,
         ]);
+
         $builder->add('imageFile', VichImageType::class, ['required' => false]);
         $builder->add('videoFile', VichFileType::class, ['required' => false]);
-        $builder->add('htags', TextareaType::class, ['required' => false]);
         $builder->add('categories', EntityType::class, [
             'class' => Category::class,
             'choice_label' => 'name',
@@ -35,12 +53,27 @@ class ArticleType extends AbstractType
         ]);
 
         $builder->add('embededVideo', TextareaType::class, ['required' => false]);
+        $choices = $this->em->getRepository('AppBundle:Tag')->findAll();
+
+        $tags = $builder->getData()->getTags();
+
+        $builder->add('tags', EntityType::class, [
+            'class' => Tag::class,
+            'choice_label' => 'label',
+            'multiple' => true,
+            'choices_as_values' => true,
+            'attr' => ['data-select2' => 'true'],
+            'required' => false,
+        ]);
+
+        $builder->get('tags')->resetViewTransformers();
+        $builder->get('tags')->addViewTransformer(new TagsViewTransformer($this->em, $tags), true);
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => 'AppBundle\Entity\Article'
+        'data_class' => 'AppBundle\Entity\Article'
         ]);
     }
 }

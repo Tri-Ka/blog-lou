@@ -5,7 +5,13 @@
         {% for article in articles %}
             <li>
                 <div class="last-article">
-                    <a href="{{ path('article_show', { 'id' : article.id }) }}" class="last-article__img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})"></a>
+                    {% if null != article.image %}
+                        <a href="{{ path('article_show', { 'id' : article.id }) }}" class="last-article__img" style="background-image: url({{ vich_uploader_asset(article, 'imageFile') }})"></a>
+                    {% else %}
+                        <a href="{{ path('article_show', { 'id' : article.id }) }}" class="last-article__img last-article__img--blank">
+                            {{ article.title|first|upper }}
+                        </a>
+                    {% endif %}
 
                     <div class="last-article__content">
                         <span class="last-article__content__tags">

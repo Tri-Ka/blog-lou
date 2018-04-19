@@ -81,11 +81,10 @@ class Article
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="text", name="htags", length=1000, nullable=true)
-     *
-     * @var string
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="articles", cascade={"persist"})
+     * @ORM\JoinTable(name="article_tag")
      */
-    private $htags;
+    protected $tags;
 
     /**
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="articles")
@@ -96,6 +95,7 @@ class Article
     public function __construct()
     {
         $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -233,49 +233,6 @@ class Article
         return $this->video;
     }
 
-    /**
-     * Set htags.
-     *
-     * @param string $htags
-     *
-     * @return Article
-     */
-    public function setHtags($htags)
-    {
-        $this->htags = $htags;
-
-        return $this;
-    }
-
-    /**
-     * Get htags.
-     *
-     * @return string
-     */
-    public function getHtags()
-    {
-        return $this->htags;
-    }
-
-    /**
-     * Get htags.
-     *
-     * @return string
-     */
-    public function getHtagsArray()
-    {
-        $tags = [];
-        $articleTags = explode('#', $this->htags);
-
-        foreach ($articleTags as $articleTag) {
-            if ('' !== $articleTag) {
-                $tags[$articleTag] = '#'.$articleTag;
-            }
-        }
-
-        return $tags;
-    }
-
     public function getCategories()
     {
         return $this->categories;
@@ -343,5 +300,25 @@ class Article
     public function removeCategory(\AppBundle\Entity\Category $category)
     {
         $this->categories->removeElement($category);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param mixed $tags
+     *
+     * @return self
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+
+        return $this;
     }
 }
