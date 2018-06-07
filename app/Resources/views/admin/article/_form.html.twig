@@ -10,17 +10,15 @@
 	    	</div>
 
 	    	<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group file-group">
 				    {{ form_row(form.imageFile, {
 				        label: 'article.form.imageFile',
 				        help: 'article.form.imageFile.help',
 				        attr: {'class' : 'form-control'}
 				    }) }}
 			    </div>
-			</div>
 
-			<div class="col-md-6">
-	    		<div class="form-group">
+			    <div class="form-group">
 	    			{% if null != article.video %}
 						<video width="100%" controls class="blog-post__video">
 						  	<source src="{{ vich_uploader_asset(article, 'videoFile') }}">
@@ -32,10 +30,8 @@
 						</div>
 					{% endif %}
 	    		</div>
-	    	</div>
 
-	    	<div class="col-md-6">
-				<div class="form-group">
+	    		<div class="form-group file-group">
 				    {{ form_row(form.videoFile, {
 				        label: 'article.form.videoFile',
 				        help: 'article.form.videoFile.help',
@@ -71,14 +67,6 @@
 				    }) }}
 				</div>
 
-	    		<div class="form-group">
-				    {{ form_row(form.htags, {
-				        label: 'article.form.htags',
-				        help: 'article.form.htags.help',
-				        attr: {'class' : 'form-control'}
-				    }) }}
-				</div>
-
 				<div class="form-group">
 				    {{ form_row(form.tags, {
 				        label: 'article.form.tags',
@@ -89,7 +77,7 @@
 
 	    		<div class="form-group">
 				    {{ form_row(form.categories, {
-				        label: 'Catégories',
+				        label: 'article.form.categories',
 				        help: 'article.form.categories.help',
 				        attr: {'class' : 'form-control'}
 				    }) }}
@@ -100,12 +88,12 @@
 
     <div class="card-footer text-right">
     	<a href="{{ url('admin_article_list') }}" class="btn btn-default">
-            <i class="fa fa-undo"></i>
+            <i class="fas fa-undo"></i>
             {{ 'admin.form.cancel'|trans }}
         </a>
 
         <button type="submit" class="btn btn-primary">
-            <i class="fa fa-check"></i>
+            <i class="far fa-save"></i>
             {{ 'admin.form.save'|trans }}
         </button>
     </div>

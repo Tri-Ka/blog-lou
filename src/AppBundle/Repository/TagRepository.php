@@ -26,4 +26,16 @@ class TagRepository extends \Doctrine\ORM\EntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function findPopular()
+    {
+        return $this
+            ->createQueryBuilder('t')
+            ->innerJoin('t.articles', 'a')
+            ->orderBy('a.createdAt', 'DESC')
+            ->setMaxResults(20)
+            ->getQuery()
+            ->getResult();
+        ;
+    }
 }

@@ -28,7 +28,7 @@ class Tag
      */
     protected $label;
 
-    /*
+    /**
      * @ORM\ManyToMany(targetEntity="Article", mappedBy="tags")
      */
     protected $articles;
@@ -74,6 +74,26 @@ class Tag
     public function setLabel($label)
     {
         $this->label = $label;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+    /**
+     * @param mixed $articles
+     *
+     * @return self
+     */
+    public function setArticles($articles)
+    {
+        $this->articles = $articles;
 
         return $this;
     }

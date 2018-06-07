@@ -1,23 +1,29 @@
 {{ form_start(form, { attr: { id: 'logo-form', class: 'form', action: url('logo') } }) }}
 
 <div class="card-body">
-    <h1 class="title-brand">
-        {% autoescape false %}
-            {{ renderSiteLogo() }}
-        {% endautoescape %}
+    <h1 class="title-brand text-center">
+        <div style="width: 150px;" class="text-center">
+            {% autoescape false %}
+                {{ renderSiteLogo() }}
+            {% endautoescape %}
+        </div>
     </h1>
 
-    {{ form_widget(form) }}
+    <div class="form-group file-group">
+        {{ form_row(form.logo, {
+            label: ' ',
+            attr: {'class' : 'form-control'}
+        }) }}
+    </div>
 </div>
 
 <div class="card-footer text-right">
     <a href="{{ url('logo_delete') }}" class="btn btn-sm btn-danger">
-        <i class="fa fa-trash"></i>
-        {{ 'admin.logo.delete'|trans }}
+        <i class="far fa-trash-alt"></i>
     </a>
 
     <button type="submit" class="btn btn-sm btn-primary">
-        <i class="fa fa-check"></i>
+        <i class="far fa-save"></i>
         {{ 'admin.form.save'|trans }}
     </button>
 </div>

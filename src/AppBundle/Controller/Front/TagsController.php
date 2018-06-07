@@ -13,7 +13,7 @@ class TagsController extends Controller
     public function popularAction()
     {
         return $this->render('front/tags/popular.html.twig', [
-            'tags' => $this->getDoctrine()->getRepository('AppBundle:Tag')->findAll(),
+            'tags' => $this->getDoctrine()->getRepository('AppBundle:Tag')->findPopular(),
         ]);
     }
 

@@ -51,3 +51,79 @@ a {
 	    height: 100%;
 	}
 }
+
+.file-group {
+	.form-control > div:first-child label {
+		display: none;
+	}
+}
+
+.navbar-user {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 64px;
+    padding: 0 2em;
+    line-height: 64px;
+}
+
+.marged {
+	margin: 1em;
+
+	&--small {
+		margin: .5em;
+	}
+
+	&--big {
+		margin: 2em;
+	}
+
+	&--bottom {
+		margin-bottom: 1em;
+
+		&--small {
+			margin-bottom: .5em;
+		}
+
+		&--big {
+			margin-bottom: 2em;
+		}
+	}
+
+	&--top {
+		margin-top: 1em;
+
+		&--small {
+			margin-top: .5em;
+		}
+
+		&--big {
+			margin-top: 2em;
+		}
+	}
+
+	&--left {
+		margin-left: 1em;
+
+		&--small {
+			margin-left: .5em;
+		}
+
+		&--big {
+			margin-left: 2em;
+		}
+	}
+
+	&--right {
+		margin-right: 1em;
+
+		&--small {
+			margin-right: .5em;
+		}
+
+		&--big {
+			margin-right: 2em;
+		}
+	}
+}

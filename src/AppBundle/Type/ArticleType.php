@@ -43,6 +43,7 @@ class ArticleType extends AbstractType
 
         $builder->add('imageFile', VichImageType::class, ['required' => false]);
         $builder->add('videoFile', VichFileType::class, ['required' => false]);
+
         $builder->add('categories', EntityType::class, [
             'class' => Category::class,
             'choice_label' => 'name',
@@ -51,6 +52,10 @@ class ArticleType extends AbstractType
             'attr' => ['data-select2' => 'true'],
             'required' => false,
         ]);
+
+        // $categories = $builder->getData()->getCategories();
+        // $builder->get('categories')->resetViewTransformers();
+        // $builder->get('categories')->addViewTransformer(new CategoriesViewTransformer($this->em, $categories), true);
 
         $builder->add('embededVideo', TextareaType::class, ['required' => false]);
         $choices = $this->em->getRepository('AppBundle:Tag')->findAll();
@@ -62,7 +67,7 @@ class ArticleType extends AbstractType
             'choice_label' => 'label',
             'multiple' => true,
             'choices_as_values' => true,
-            'attr' => ['data-select2' => 'true'],
+            'attr' => ['data-select2-tags' => 'true'],
             'required' => false,
         ]);
 

@@ -3,7 +3,7 @@
 {% block main %}
 	<ol class="breadcrumb">
 	    <li class="breadcrumb-item">
-	        <a href="{{ path('admin_picture_list') }}">Pictures</a>
+	        <a href="{{ path('admin_picture_list') }}">Gallerie</a>
 	    </li>
 
 	    <li class="breadcrumb-item active">Liste</li>
@@ -11,53 +11,36 @@
 
 	<div class="card mb-3">
         <div class="card-header">
-          	<i class="fa fa-table"></i> Liste des pictures
+          	<i class="fas fa-list-ul"></i> Liste des images
 
-          	<div class="pull-right">
+          	<div class="float-right">
           		<a href="{{ path('admin_picture_new') }}" class="btn btn-sm btn-primary">
-          			Ajouter <i class="fa fa-plus"></i>
+          			Ajouter <i class="fas fa-plus"></i>
           		</a>
           	</div>
 		</div>
 
         <div class="card-body">
-			<div class="table-responsive">
-            	<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              		<thead>
-                		<tr>
-                  			<th>id</th>
-							<th>image</th>
-							<th>Actions</th>
-                		</tr>
-              		</thead>
+        	<div class="row">
+        		{% for picture in pictures %}
+	        		<div class="col-xs-12 col-sm-4">
+						<div class="card marged--bottom--big">
+							<img class="card-img-top" src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('gallery_thumb') }}">
 
-              		<tfoot>
-                		<tr>
-							<th>id</th>
-							<th>image</th>
-							<th>Actions</th>
-                		</tr>
-              		</tfoot>
-
-              		<tbody>
-              			{% for picture in pictures %}
-	                		<tr>
-								<td>{{ picture.id }}</td>
-								<td><img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('gallery_thumb') }}"></td>
-								<td>
-									<a href="{{ path('admin_picture_del', {'id' : picture.id}) }}" class="btn btn-sm btn-danger">
-										<i class="fa fa-trash"></i>
-									</a>
-
-									<a href="{{ path('admin_picture_edit', {'id' : picture.id}) }}" class="btn btn-sm btn-primary">
-										<i class="fa fa-pencil"></i>
-									</a>
-								</td>
-	                		</tr>
-                		{% endfor %}
-              		</tbody>
-            	</table>
-          	</div>
+						  	<div class="card-body">
+						    	<h5 class="card-title">{{ picture.title }}</h5>
+						    	<p class="card-text">{{ picture.content }}</p>
+						    	<a href="{{ path('admin_picture_edit', {'id' : picture.id}) }}" class="btn btn-sm btn-primary">
+									<i class="far fa-edit"></i>
+								</a>
+								<a href="{{ path('admin_picture_del', {'id' : picture.id}) }}" class="btn btn-sm btn-danger">
+									<i class="far fa-trash-alt"></i>
+								</a>
+						  	</div>
+						</div>
+	        		</div>
+        		{% endfor %}
+        	</div>
         </div>
 	</div>
 {% endblock %}

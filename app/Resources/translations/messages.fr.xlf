@@ -93,6 +93,62 @@
         <source>Envoyer</source>
         <target>Envoyer</target>
       </trans-unit>
+      <trans-unit id="JWRaEpP" resname="article.form.videoFile">
+        <source>article.form.videoFile</source>
+        <target>Fichier video</target>
+      </trans-unit>
+      <trans-unit id="9.0.LyD" resname="article.form.embededVideo">
+        <source>article.form.embededVideo</source>
+        <target>Url video</target>
+      </trans-unit>
+      <trans-unit id="S9X759N" resname="article.form.tags">
+        <source>article.form.tags</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="jYj40e4" resname="article.form.categories">
+        <source>article.form.categories</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="nvvPYUD" resname="category.form.name">
+        <source>category.form.name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="03hbSu3" resname="picture.form.imageFile">
+        <source>picture.form.imageFile</source>
+        <target>Fichier</target>
+      </trans-unit>
+      <trans-unit id="XMaaO3." resname="picture.form.title">
+        <source>picture.form.title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="tPRGwgA" resname="picture.form.content">
+        <source>picture.form.content</source>
+        <target>Legende</target>
+      </trans-unit>
+      <trans-unit id="0MhEFCq" resname="user.form.username">
+        <source>user.form.username</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="EOLjCw9" resname="user.form.email">
+        <source>user.form.email</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="qCsbizw" resname="user.form.enabled">
+        <source>user.form.enabled</source>
+        <target>Activé</target>
+      </trans-unit>
+      <trans-unit id="3PjodtR" resname="user.form.roles">
+        <source>user.form.roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id="wWVhSoI" resname="user.form.password">
+        <source>user.form.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="ofP5sCE" resname="user.form.re-password">
+        <source>user.form.re-password</source>
+        <target>Re-password</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

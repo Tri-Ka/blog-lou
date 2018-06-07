@@ -53,21 +53,23 @@
 
 						<div class="sharethis-inline-share-buttons mb-4"></div>
 
-						<div class="blog-post__tags">
-							<h2>
-								Tags associés:
-							</h2>
+						{% if 0 < article.tags|length %}
+							<div class="blog-post__tags">
+								<h2>
+									Tags associés:
+								</h2>
 
-							<ul class="blog-post__tags__list popular-tags__list">
-								{% for tag in article.tags %}
-									<li>
-										<a href="{{ path('tag_search', { 'tag' : tag }) }}" class="tag-link">
-											{{ tag }}
-										</a>
-									</li>
-								{% endfor %}
-							</ul>
-						</div>
+								<ul class="blog-post__tags__list popular-tags__list">
+									{% for tag in article.tags %}
+										<li>
+											<a href="{{ path('tag_search', { 'tag' : tag }) }}" class="tag-link">
+												{{ tag }}
+											</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
 
 						<div class="blog-post__bottom">
 							<h2>
